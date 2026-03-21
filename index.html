@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy E-Commerce Carnicas Dani | Cesar Dierez Martinez</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf8f5;
+            color: #2d2d2d;
+            line-height: 1.7;
+        }
+
+        /* ============ HEADER ============ */
+        .doc-header {
+            background: #1a3a2a;
+            color: #f5f0e8;
+            padding: 60px 40px 20px;
+            text-align: center;
+        }
+        .doc-header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #d4a853;
+        }
+        .doc-header p { font-size: 1.1rem; opacity: 0.85; }
+        .doc-header .meta { margin-top: 15px; font-size: 0.9rem; opacity: 0.6; }
+
+        /* ============ LANG TOGGLE ============ */
+        .lang-bar {
+            background: #1a3a2a;
+            padding: 16px 40px;
+            text-align: center;
+            border-bottom: 2px solid #d4a853;
+        }
+        .lang-toggle {
+            display: inline-flex;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid #d4a853;
+        }
+        .lang-btn {
+            padding: 8px 24px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: transparent;
+            color: #d4a853;
+        }
+        .lang-btn.active {
+            background: #d4a853;
+            color: #1a3a2a;
+        }
+        .lang-btn:hover:not(.active) {
+            background: rgba(212, 168, 83, 0.15);
+        }
+
+        /* ============ NAV ============ */
+        .page-nav {
+            background: #1a3a2a;
+            padding: 16px 40px 30px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .page-nav a {
+            color: #f5f0e8;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(212, 168, 83, 0.4);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .page-nav a:hover {
+            background: #d4a853;
+            color: #1a3a2a;
+            border-color: #d4a853;
+        }
+
+        /* ============ PAGINA ============ */
+        .page { max-width: 960px; margin: 0 auto; padding: 0 30px; }
+        .page-title {
+            background: #2d5a3f;
+            color: #f5f0e8;
+            padding: 40px;
+            margin: 60px -30px 0;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+        }
+        .page-title h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: #d4a853;
+        }
+        .page-title p { margin-top: 8px; opacity: 0.75; font-size: 0.95rem; }
+
+        /* ============ SECAO ============ */
+        .secao {
+            background: #fff;
+            padding: 40px;
+            margin: 0 -30px;
+            border-bottom: 1px solid #e8e3da;
+        }
+        .secao:last-child {
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 40px;
+        }
+        .secao-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2d5a3f;
+            margin-bottom: 6px;
+        }
+        .secao h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #1a3a2a;
+            margin-bottom: 20px;
+        }
+
+        /* ============ COPY ELEMENTS ============ */
+        .label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fff;
+            background: #2d5a3f;
+            padding: 3px 10px;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+        .label.headline { background: #d4a853; color: #1a3a2a; }
+        .label.subtitulo { background: #7a6a4f; }
+        .label.corpo { background: #4a7a5f; }
+        .label.cta { background: #8b3a3a; }
+        .label.destaque { background: #5a4a7a; }
+        .label.nota-visual { background: #6a6a6a; }
+
+        .copy-block { margin-bottom: 24px; }
+        .copy-text { font-size: 1.05rem; line-height: 1.8; color: #3d3d3d; }
+        .copy-headline {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            color: #1a3a2a;
+            margin: 4px 0 8px;
+        }
+        .cta-text {
+            display: inline-block;
+            background: #d4a853;
+            color: #1a3a2a;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 4px 6px 4px 0;
+        }
+        .cta-text.secondary {
+            background: transparent;
+            border: 2px solid #d4a853;
+            color: #d4a853;
+        }
+        .destaque-block {
+            background: #f5f0e8;
+            border-left: 4px solid #d4a853;
+            padding: 20px 24px;
+            margin: 16px 0;
+            font-style: italic;
+            color: #4a4a4a;
+            border-radius: 0 8px 8px 0;
+        }
+        .nota-visual {
+            background: #f0ede7;
+            border: 1px dashed #c9c1b3;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #7a7a7a;
+            margin-top: 16px;
+        }
+        .nota-visual::before { content: "Nota visual: "; font-weight: 700; color: #999; }
+
+        /* ============ PILARES / CARDS ============ */
+        .pilares {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .pilar {
+            background: #f9f6f1;
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid #e8e3da;
+        }
+        .pilar h4 {
+            font-family: 'DM Serif Display', serif;
+            color: #2d5a3f;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .pilar p { font-size: 0.95rem; color: #5a5a5a; line-height: 1.6; }
+
+        /* ============ PRODUTO CARD ============ */
+        .produto-card {
+            background: #f9f6f1;
+            border: 1px solid #e8e3da;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 24px 0;
+        }
+        .produto-card .produto-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+        .produto-card h4 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            color: #1a3a2a;
+        }
+        .produto-preco {
+            background: #d4a853;
+            color: #1a3a2a;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+        .produto-tagline {
+            font-style: italic;
+            color: #7a6a4f;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .produto-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+        .produto-meta span {
+            font-size: 0.8rem;
+            background: #e8e3da;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #5a5a5a;
+        }
+        .desc-completa { margin-top: 14px; padding-top: 14px; border-top: 1px solid #e8e3da; }
+        .desc-completa summary { cursor: pointer; font-weight: 600; color: #2d5a3f; font-size: 0.9rem; }
+        .desc-completa .inner { margin-top: 12px; color: #5a5a5a; font-size: 0.95rem; line-height: 1.7; }
+
+        /* ============ TABELA ============ */
+        .tabela-wrapper { overflow-x: auto; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th { background: #2d5a3f; color: #f5f0e8; padding: 12px 16px; text-align: left; font-weight: 600; }
+        td { padding: 10px 16px; border-bottom: 1px solid #e8e3da; color: #4a4a4a; }
+        tr:nth-child(even) td { background: #f9f6f1; }
+
+        /* ============ FAQ ============ */
+        .faq-categoria {
+            margin: 24px 0 12px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            color: #2d5a3f;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #d4a853;
+        }
+        .faq-item { margin: 12px 0; border: 1px solid #e8e3da; border-radius: 8px; overflow: hidden; }
+        .faq-item summary { padding: 16px 20px; cursor: pointer; font-weight: 600; color: #1a3a2a; background: #f9f6f1; font-size: 0.95rem; }
+        .faq-item summary:hover { background: #f0ede7; }
+        .faq-item .faq-resposta { padding: 16px 20px; color: #5a5a5a; line-height: 1.7; font-size: 0.95rem; }
+
+        /* ============ MISC ============ */
+        .copy-text ul { padding-left: 20px; margin: 10px 0; }
+        .copy-text ul li { margin-bottom: 6px; }
+        .doc-footer {
+            background: #1a3a2a;
+            color: #f5f0e8;
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .doc-footer p { opacity: 0.6; font-size: 0.85rem; }
+
+        /* ============ LANG VISIBILITY ============ */
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        @media (max-width: 768px) {
+            .doc-header h1 { font-size: 1.8rem; }
+            .page-title h2 { font-size: 1.5rem; }
+            .secao { padding: 24px; }
+            .pilares { grid-template-columns: 1fr; }
+            .produto-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+    <h1>Copy E-Commerce Carnicas Dani</h1>
+    <p>7 Páginas | E-commerce Carnicería Artesanal | Carnes, Hamburguesas, Kits Parrillada</p>
+    <p class="meta">Cliente: Cesar Dierez Martinez | Data: 20/03/2026</p>
+</div>
+
+<!-- LANG TOGGLE -->
+<div class="lang-bar">
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLang('es')">Español (Original)</button>
+        <button class="lang-btn" onclick="switchLang('pt')">Português (BR)</button>
+    </div>
+</div>
+
+<!-- NAV ES -->
+<nav class="page-nav lang-content active" data-lang="es">
+    <a href="#p1-es">1. Inicio (Home)</a>
+    <a href="#p2-es">2. Quienes Somos</a>
+    <a href="#p3-es">3. Tienda</a>
+    <a href="#p4-es">4. Kits y Ofertas</a>
+    <a href="#p5-es">5. Nuestras Carnes</a>
+    <a href="#p6-es">6. Pedidos y Contacto</a>
+    <a href="#p7-es">7. Envíos y FAQ</a>
+    <a href="#notas-es">Notas Generales</a>
+</nav>
+
+<!-- NAV PT -->
+<nav class="page-nav lang-content" data-lang="pt">
+    <a href="#p1-pt">1. Inicio (Home)</a>
+    <a href="#p2-pt">2. Quem Somos</a>
+    <a href="#p3-pt">3. Loja</a>
+    <a href="#p4-pt">4. Kits e Ofertas</a>
+    <a href="#p5-pt">5. Nossas Carnes</a>
+    <a href="#p6-pt">6. Pedidos e Contato</a>
+    <a href="#p7-pt">7. Envíos e FAQ</a>
+    <a href="#notas-pt">Notas Gerais</a>
+</nav>
+
+
+<!-- ================================================================== -->
+<!-- ====================== ESPANOL (ORIGINAL) ======================== -->
+<!-- ================================================================== -->
+<div class="lang-content active" data-lang="es">
+
+<!-- PAGINA 1 - INICIO -->
+<div class="page" id="p1-es">
+    <div class="page-title"><h2>Página 1 - Inicio (Home)</h2></div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 1</p>
+        <h3>Hero / Banner Principal</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Carne de verdad. De nuestros pastos a tu parrilla.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Somos Carnicas Dani, carnicería artesanal asturiana con ganadería propia. Elaboramos hamburguesas, embutidos y preparados para parrillada con ingredientes de primera calidad, desde Asturias para toda España. Aquí sabes de dónde viene lo que comes --- y se nota en cada bocado.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Explorar la Tienda >>></span><span class="cta-text secondary">Ver Kits de Parrillada >>></span></div>
+        <div class="nota-visual">Imagen hero a pantalla completa mostrando una parrillada en accion con carnes jugosas y brasas vivas, o bien una composición de productos Carnicas Dani sobre tabla de madera rústica. Overlay oscuro sutil para contraste. Tipografía bold, estilo rústico-premium. Los CTAs deben ser botones grandes y contrastantes --- el principal en color de la marca, el secundario en outline. Considerar video corto de fondo (loop de parrilla humeante) si el rendimiento lo permite.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 2</p>
+        <h3>Barra de Credibilidad</h3>
+        <div class="copy-block"><span class="label corpo">Texto corrido (faja horizontal)</span><p class="copy-text">Ganadería Propia en Asturias | Elaboración 100% Artesanal | Envíos a Toda España | Precio Exclusivo Web | +10 Variedades de Hamburguesa</p></div>
+        <div class="nota-visual">Faja horizontal con fondo oscuro (negro, grafito o verde asturiano). Iconos representando cada item (vaca/pasto, manos artesanales, camión/mapa, etiqueta precio, hamburguesa). Texto blanco o crema. Funciona como barra de confianza inmediatamente debajo del hero. Scroll horizontal en mobile si es necesario.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 3</p>
+        <h3>El Problema</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Estás cansado de comprar carne sin saber de dónde viene?</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">En el supermercado, la carne llega envuelta en plástico, sin historia, sin origen, sin alma. No sabes qué animal era, ni como fue criado, ni que le añadieron. Abres la bandeja, la cocinas... y algo falta. Falta sabor. Falta confianza. Falta esa textura jugosa que solo tiene la carne de verdad.</p><p class="copy-text" style="margin-top:12px">Y cuando quieres hacer una parrillada en condiciones --- con amigos, con la familia, para celebrar algo --- te encuentras con lo de siempre: productos genéricos, cantidades que no cuadran y la sensacion de que podria haber sido mejor.</p></div>
+        <div class="destaque-block">Si alguna vez has pensado "esto no sabe a nada" delante de una barbacoa... el problema no eras tú. Era la carne.</div>
+        <div class="nota-visual">Fondo claro, tipografía grande y limpia. El bloque destacado puede ir en formato cita con fondo de color suave (beige, crema) y borde lateral en color de la marca. Iconos discretos: bandeja de supermercado, signo de interrogación, cara decepcionada. Layout centrado, una columna.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 4</p>
+        <h3>La Solución Carnicas Dani</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Carne con nombre, apellido y pasto propio</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Carnicas Dani nace de una familia ganadera asturiana que cria su propio ganado, elabora sus productos a mano y te los envía directamente. Sin intermediarios. Sin sorpresas. Solo producto auténtico.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Pilar 1 - Ganadería Propia</h4><p>Nuestro ganado pace libremente en los prados de Asturias. Sabemos exactamente qué come, cómo se cría y cuándo está en su punto. Esa es la diferencia que se prueba.</p></div>
+            <div class="pilar"><h4>Pilar 2 - Elaboración Artesanal</h4><p>Cada hamburguesa, cada embutido, cada preparado se elabora a mano en nuestro obrador. Recetas propias, ingredientes de primera, sin atajos indústriales. Como se ha hecho siempre.</p></div>
+            <div class="pilar"><h4>Pilar 3 - Directo a Tu Casa</h4><p>Haces tu pedido en la web, preparamos todo en fresco y te lo enviamos en frío a cualquier punto de España. Precio exclusivo online, más económico que en tienda física.</p></div>
+        </div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ver Todos los Productos >>></span></div>
+        <div class="nota-visual">Layout en 3 columnas con icono o ilustración en la parte superior de cada pilar (vaca en pasto, manos amasando, caja de envio). Fondo blanco con detalles en color de marca. Estilo limpio pero cálido. CTA centrado debajo de los pilares. Iconos con trazo grueso, estilo artesanal.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 5</p>
+        <h3>Categorías de Productos en Destaque</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Qué te apetece hoy?</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Explora nuestras categorías y encuentra exactamente lo que necesitas para tu próxima parrillada, comida familiar o capricho entre semana.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Hamburguesas Artesanales</h4><p>+10 variedades elaboradas a mano con carne de ganadería propia. Desde la clásica de ternera asturiana hasta la explosiva con kiku de carne y cebolla crujiente. Todas únicas, todas nuestras.</p><br><span class="cta-text">Ver Hamburguesas >>></span></div>
+            <div class="pilar"><h4>Kits de Parrillada</h4><p>Packs completos de 4 a 12 personas con las mejores carnes y preparados para parrilla. Tu eliges el tamaño, nosotros ponemos la calidad. Listos para la brasa.</p><br><span class="cta-text">Ver Kits >>></span></div>
+            <div class="pilar"><h4>Embutidos y Elaborados</h4><p>Chorizo, morcilla, picadillo y embutidos artesanales con el sello de Asturias. Productos de obrador, elaborados con recetas tradiciónales y materia prima de primera.</p><br><span class="cta-text">Ver Embutidos >>></span></div>
+            <div class="pilar"><h4>Carne Fresca</h4><p>Ternera asturiana, cerdo y pollo de primera calidad. Cortes selecciónados, preparados al momento y enviados en frío para que lleguen como recien cortados.</p><br><span class="cta-text">Ver Carne Fresca >>></span></div>
+        </div>
+        <div class="nota-visual">4 cards grandes con imagen de cada categoria como fondo (hamburguesa a la brasa, kit de parrilla montado, tabla de embutidos, pieza de carne fresca). Overlay oscuro con titulo y CTA superpuestos. Efecto hover: zoom sutil en la imagen. Layout en grid 2x2 en desktop, columna única en mobile. Estilo visual tipo e-commerce premium de alimentación.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 6</p>
+        <h3>Kits en Destaque</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Parrillada perfecta. Sin complicaciones.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">No calcules cantidades, no busques en tres sitios. Elige tu pack, añade al carrito y disfruta. Nosotros nos encargamos de que todo sea de primera.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Pack Degustación (~1,2 kg)</h4><p>Para 2-3 personas. El pack perfecto para probar lo mejor de Carnicas Dani sin compromiso. Una selección de nuestras hamburguesas más populares y un embutido artesanal.</p><br><span class="cta-text">Añadir al Carrito >>></span></div>
+            <div class="pilar"><h4>Pack Top (~4 kg)</h4><p>Para 4-6 personas. El favorito de nuestros clientes. Variedad de hamburguesas artesanales, carne para parrilla y embutido asturiano. Todo lo que necesitas para una barbacoa memorable.</p><br><span class="cta-text">Añadir al Carrito >>></span></div>
+            <div class="pilar"><h4>Pack Fiesta (~7-12 kg)</h4><p>Para 8-12 personas. La parrillada grande. Surtido completo de carnes, hamburguesas, embutidos y preparados para que no falte de nada. Ideal para reuniones familiares, celebraciones o ese asado de fin de semana con los amigos.</p><br><span class="cta-text">Añadir al Carrito >>></span></div>
+            <div class="pilar"><h4>Pack Personalizado</h4><p>Tu eliges. Escribe por WhatsApp que quieres, en que cantidad y para cuántas personas. Nosotros lo preparamos a medida, con el mismo cuidado artesanal de siempre.</p><br><span class="cta-text">Pedir por WhatsApp >>></span></div>
+        </div>
+        <div class="nota-visual">4 cards en fila horizontal (scroll en mobile). Cada card con foto del pack, nombre, descripción breve, peso apróximado y boton CTA. El Pack Personalizado puede tener un diseño diferenciado (borde discontinuo, icono de WhatsApp). Etiqueta "Más vendido" en el Pack Top. Fondo claro, cards con sombra sutil.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 7</p>
+        <h3>Por Que Comprar en Carnicas Dani</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Lo que nos hace diferentes</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">No somos un supermercado. No somos una nave indústrial. Somos una carnicería de verdad con ganadería propia que elabora todo a mano.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Ganadería Propia</h4><p>Nuestro ganado se cria en pastos extensivos de Asturias. Controlamos toda la cadena: del prado al obrador, del obrador a tu casa. Trazabilidad total.</p></div>
+            <div class="pilar"><h4>Elaboración Artesanal</h4><p>Cada producto se elabora en nuestro obrador, a mano, con recetas propias. Sin conservantes artificiales, sin rellenos baratos. Ingredientes de verdad.</p></div>
+            <div class="pilar"><h4>Precio Exclusivo Web</h4><p>En nuestra tienda online los precios son más económicos que en la tienda física. Comprando aquí, te llevas la misma calidad a mejor precio.</p></div>
+            <div class="pilar"><h4>Envío en Frío a Toda España</h4><p>Preparamos tu pedido en fresco y lo enviamos en envase isotérmico con frío garantizado. Llega a tu puerta como si salieras de nuestra carnicería.</p></div>
+            <div class="pilar"><h4>Garantía Total</h4><p>Si tu pedido llega en mal estado, lo reponemos o te devolvemos el dinero. Sin preguntas. Así de claro.</p></div>
+            <div class="pilar"><h4>Atención Cercana</h4><p>Nos puedes escribir por WhatsApp como si hablaras con tu carnicero de toda la vida. Te asesoramos, te recomendamos y te preparamos lo que necesites.</p></div>
+        </div>
+        <div class="nota-visual">Layout en grid 3x2 o lista vertical con icono a la izquierda de cada diferencial. Iconos: vaca, manos, etiqueta euro, caja frío, escudo garantía, teléfono. Fondo alternado (blanco/crema) por fila. Estilo limpio y fácil de escanear.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 8</p>
+        <h3>Testimonios / Prueba Social</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Lo que dicen quienes ya han probado</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">No lo decimos nosotros. Lo dicen los que repiten.</p></div>
+        <div class="pilares">
+            <div class="pilar"><p>"Pedí el Pack Top para una barbacoa con amigos y fue un éxito. Las hamburguesas no tienen nada que ver con las del supermercado. Jugosas, con sabor de verdad. Ya he repetido tres veces."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Carlos M., Madrid</p></div>
+            <div class="pilar"><p>"Soy asturiana viviendo en Barcelona y echaba de menos la calidad de una carnicería de pueblo. Con Carnicas Dani es como volver a casa. El chorizo y la hamburguesa asturiana son otra cosa."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Laura G., Barcelona</p></div>
+            <div class="pilar"><p>"Al principio me daba reparo comprar carne online, pero llegó perfecta: en frío, bien envasada y en el plazo que me dijeron. La calidad es brutal. Ya no compro hamburguesas en otro sitio."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Miguel A., Valencia</p></div>
+            <div class="pilar"><p>"Las hamburguesas cachopa son una locura. Mi familia me las pide cada fin de semana. Y el trato por WhatsApp es como hablar con el carnicero del barrio, pero sin hacer cola."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Ana R., Bilbao</p></div>
+            <div class="pilar"><p>"Hice un pedido personalizado para un cumpleaños con 15 personas. Me asesoraron por WhatsApp, me calcularon las cantidades y llegó todo perfecto. Servicio impecable."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- David L., Sevilla</p></div>
+        </div>
+        <div class="nota-visual">Cards de testimonio con aspas grandes estilizadas. Foto de avatar genérico o iniciales del cliente. Estrellas de valoración (5/5) encima del texto. Carrusel horizontal con flechas de navegación en desktop, scroll en mobile. Fondo claro. IMPORTANTE: Estos testimonios son ficticios para referencia. Sustituir por testimonios reales de clientes siempre que sea posible.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 9</p>
+        <h3>CTA Intermedio</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Tu próxima parrillada merece carne de verdad</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Explora la tienda, elige tus favoritos y recíbelos en casa en 24-48h. O si prefieres, escríbenos por WhatsApp y te armamos un pack a medida.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir a la Tienda >>></span><span class="cta-text secondary">Pedir por WhatsApp >>></span></div>
+        <div class="nota-visual">Faja de CTA con imagen de fondo (parrilla humeante, brasas, ambiente de celebración). Overlay oscuro. Texto blanco grande. Dos botones lado a lado: el principal en color de la marca, el secundario con icono de WhatsApp.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 10</p>
+        <h3>Sección Localista / Orgullo Asturiano</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Hecho en Asturias. Con orgullo.</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Asturias no es solo paisaje. Es tradición ganadera, es obrador, es sidra, es cachopa, es sentarse alrededor de una mesa y compartir lo mejor. Carnicas Dani nace de esa tierra y de esa cultura.</p><p class="copy-text" style="margin-top:12px">Nuestros productos llevan el sello de la gastronomía asturiana: la cachopa hecha hamburguesa, el picadillo con queso azul, la fabada que te transporta. Sabores que cuentan de dónde vienen.</p><p class="copy-text" style="margin-top:12px">Estes en Madrid, en Barcelona, en Sevilla o en cualquier rincón de España, ahora puedes tener un trozo de Asturias en tu mesa.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Descubrir Productos Asturianos >>></span></div>
+        <div class="nota-visual">Sección con fondo de imagen de paisaje asturiano (prados verdes, montañas, ganado) con overlay sutil. Texto superpuesto en blanco o crema. Estilo emocional y cinematográfico. Transmitir raices, tradición y autenticidad.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 11</p>
+        <h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">De nuestros pastos a tu parrilla. Haz tu pedido.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Elige tus productos, añade al carrito y recíbelos en casa con toda la frescura y el sabor de una carnicería artesanal asturiana. Envío en frío a toda España.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Comprar Ahora >>></span><span class="cta-text secondary">Hablar por WhatsApp >>></span></div>
+        <div class="copy-block"><span class="label corpo">Informaciones complementarias</span><p class="copy-text">sm.cesarmartinez@gmail.com<br>@carnicasdani<br>WhatsApp: [número]</p></div>
+        <div class="nota-visual">Sección de cierre con fondo oscuro (negro o verde asturiano muy oscuro). Logo de Carnicas Dani centrado. Botones CTA grandes y contrastantes. Links a redes sociales e iconos clicables.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Sección 12</p>
+        <h3>Rodapé</h3>
+        <div class="copy-block"><span class="label corpo">Contenido</span><p class="copy-text"><strong>Carnicas Dani</strong><br>Carnicería artesanal con ganadería propia | Asturias, España</p></div>
+        <div class="copy-block"><span class="label corpo">Enlaces rápidos</span><p class="copy-text">Inicio | Quienes Somos | Tienda | Kits y Ofertas | Nuestras Carnes | Pedidos y Contacto | Envíos y FAQ</p></div>
+        <div class="copy-block"><span class="label corpo">Contacto</span><p class="copy-text">sm.cesarmartinez@gmail.com<br>WhatsApp: [número]</p></div>
+        <div class="copy-block"><span class="label corpo">Redes Sociales</span><p class="copy-text">Instagram: @carnicasdani</p></div>
+        <div class="copy-block"><span class="label corpo">Información legal</span><p class="copy-text">Política de Privacidad | Aviso Legal | Política de Cookies | Condiciones de Compra</p><p class="copy-text" style="margin-top:8px">Copyright 2026 Carnicas Dani. Todos los derechos reservados.</p></div>
+        <div class="nota-visual">Rodapé oscuro (negro, grafito o verde muy oscuro). Logo pequeño. Enlaces organizados en columnas. Iconos de WhatsApp e Instagram clicables. Sellos de pago seguro (Visa, Mastercard, Bizum, etc). Este rodape se repite en todas las páginas.</div>
+    </div>
+</div>
+
+<!-- PAGINAS 2-7 ES (resumidas para manter o arquivo gerenciavel - mesma estrutura) -->
+
+<!-- PAGINA 2 -->
+<div class="page" id="p2-es">
+    <div class="page-title"><h2>Página 2 - Quienes Somos / Ganadería Propia</h2></div>
+    <div class="secao">
+        <p class="secao-label">Sección 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Detrás de cada producto hay una familia, un pasto y una forma de hacer las cosas</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Conoce la historia de Carnicas Dani: de dónde venimos, cómo trabajamos y por qué nuestra carne sabe diferente.</p></div>
+        <div class="nota-visual">Imagen hero con foto de la familia / Cesar en el campo con ganado, o bien imagen del obrador con productos. Tono cálido, auténtico y cercano. Overlay sutil. Texto blanco.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 2</p><h3>Nuestra História</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Una carnicería con raices en el campo</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Carnicas Dani no empezó en un despacho ni en una nave indústrial. Empezo en los prados de Asturias, con ganado propio y con las manos en la masa --- literalmente.</p><p class="copy-text" style="margin-top:12px">Somos una familia ganadera y carnicera. Criamos nuestro propio ganado en pastos extensivos asturianos, y desde nuestro obrador en la zona de Oviedo y Pola de Laviana elaboramos todo lo que vendemos: hamburguesas, embutidos, preparados para parrilla y productos típicos asturianos.</p><p class="copy-text" style="margin-top:12px">Lo que empezó como una carnicería de barrio crecio gracias a la confianza de nuestros clientes. Gente que entraba, probaba y volvia. Gente que nos recomendaba a sus amigos. Gente que nos decía: "oye, y no enviais fuera de Asturias?"</p><p class="copy-text" style="margin-top:12px">Así nació nuestra tienda online: para que cualquier persona en España pueda disfrutar de la calidad de una carnicería artesanal asturiana, con ganadería propia, sin moverse de casa.</p></div>
+        <div class="nota-visual">Layout en dos columnas --- texto a la izquierda, collage de fotos a la derecha (campo, ganado, obrador, tienda física, familia). Fotos con bordes redondeados o estilo polaroid para transmitir autenticidad.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 3</p><h3>Ganadería Propia</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Ganadería propia: del prado al obrador</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Este es nuestro mayor diferencial. Y pocos pueden decirlo.</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Nuestro ganado no viene de un mayorista, de una subasta ni de una nave de engorde intensivo. Nace y se cria en nuestros propios pastos en Asturias. Eso significa que controlamos toda la cadena:</p></div>
+        <div class="pilares" style="grid-template-columns:1fr 1fr">
+            <div class="pilar"><h4>Paso 1 - Cria en Pasto Extensivo</h4><p>Nuestras reses pacen libremente en los prados asturianos, alimentándose de forma natural. Sin prisas, sin estres, sin atajos. El resultado es una carne con un sabor, una textura y una terneza que no se consiguen de otra forma.</p></div>
+            <div class="pilar"><h4>Paso 2 - Selección y Sacrificio</h4><p>Selecciónamos cuidadosamente cada animal en su punto óptimo. Trabajamos con mataderos de confianza que comparten nuestros estándares de bienestar animal y calidad.</p></div>
+            <div class="pilar"><h4>Paso 3 - Elaboración en Obrador Propio</h4><p>La carne llega a nuestro obrador y alli la transformamos: cortamos, picamos, sazonamos, mezclamos y elaboramos cada producto a mano. Hamburguesas, embutidos, preparados --- todo sale de aquí.</p></div>
+            <div class="pilar"><h4>Paso 4 - De Nuestras Manos a Tu Casa</h4><p>Envasamos en frío, empaquetamos con cuidado y enviamos para que llegue a tu puerta con toda la frescura. Como si salieras de nuestra carnicería.</p></div>
+        </div>
+        <div class="destaque-block">Ganadería propia = trazabilidad total. Sabemos la historia de cada pieza que te llega. Y eso es algo que un supermercado no puede ofrecerte.</div>
+        <div class="nota-visual">Timeline vertical o infografia con 4 pasos. Cada paso con icono ilustrativo. Fotos reales del proceso intercaladas. Sección visualmente rica --- es el corazón de la marca.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 4</p><h3>Nuestros Valores</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">En qué creemos</p></div>
+        <div class="pilares" style="grid-template-columns:1fr 1fr">
+            <div class="pilar"><h4>Producto Auténtico</h4><p>No buscamos producir mas, buscamos producir mejor. Cada producto lleva ingredientes de primera calidad, sin rellenos, sin conservantes artificiales, sin atajos. Lo que ves es lo que comes.</p></div>
+            <div class="pilar"><h4>Trato Cercano</h4><p>Somos una carnicería, no una multinacional. Respondemos por WhatsApp, te asesoramos, te conocemos por nombre. Queremos que comprar online se sienta como entrar en nuestra tienda.</p></div>
+            <div class="pilar"><h4>Tradición con Evolución</h4><p>Respetamos las recetas de siempre, pero no nos quedamos quietos. Innovamos con nuevos sabores, combinaciones y formatos. La hamburguesa Explosiva o la Cachopa nacieron así: de la tradición asturiana con una vuelta creativa.</p></div>
+            <div class="pilar"><h4>Transparencia Total</h4><p>Publicamos ingredientes, pesos, origenes y precios sin letra pequeña. Si algo no te llega bien, lo reponemos o te devolvemos el dinero. Sin preguntas. Punto.</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 5</p><h3>El Obrador</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nuestro obrador: donde todo cobra vida</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">El obrador es el alma de Carnicas Dani. Es donde la carne se convierte en producto. Donde las recetas toman forma. Donde cada hamburguesa se moldea a mano, cada chorizo se embute con paciência y cada preparado para parrilla se sazona con la precisión de quien lleva años haciéndolo.</p><p class="copy-text" style="margin-top:12px">No usamos máquinas automáticas que escupen cientos de unidades por hora. Aquí el ritmo lo marca la calidad. Cada lote es pequeño, controlado y cuidado.</p></div>
+        <div class="copy-block"><span class="label corpo">Destaques</span><p class="copy-text"><ul><li>Elaboración manual con recetas propias</li><li>Ingredientes frescos y de primera calidad</li><li>Lotes pequeños y controlados</li><li>Condiciones sanitarias certificadas</li><li>Producción bajo pedido para máxima frescura</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 6</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Ahora que nos conoces, prueba lo que hacemos</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Entra en la tienda, elige tus productos favoritos y descubre por qué nuestros clientes repiten. Envío en frío a toda España.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir a la Tienda >>></span><span class="cta-text secondary">Ver Kits de Parrillada >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 3 - TIENDA -->
+<div class="page" id="p3-es">
+    <div class="page-title"><h2>Página 3 - Tienda</h2></div>
+    <div class="secao">
+        <p class="secao-label">Sección 1</p><h3>Hero / Cabecera</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">La tienda de Carnicas Dani</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Hamburguesas artesanales, carne fresca, embutidos y kits de parrillada. Todo elaborado a mano con carne de ganadería propia en Asturias. Precio exclusivo web. Envío en frío a toda España.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 2</p><h3>Filtros y Categorías</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Explora por categoria</p></div>
+        <div class="copy-block"><span class="label corpo">Categorías</span><p class="copy-text"><strong>Todas</strong> | <strong>Hamburguesas Artesanales</strong> | <strong>Kits de Parrillada</strong> | <strong>Embutidos y Elaborados</strong> | <strong>Carne Fresca</strong> | <strong>Productos Asturianos</strong></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 3</p><h3>Productos - Hamburguesas Artesanales</h3>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">+10 variedades únicas, elaboradas a mano en nuestro obrador con carne de ganadería propia. Cada una tiene su caracter. Todas tienen nuestro sello.</p></div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa Mixta de Ternera y Cerdo</h4><span class="produto-preco">2,10 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">El clásico que nunca falla.</p>
+            <p class="copy-text">Mezcla equilibrada de ternera y cerdo de ganadería propia. Jugosa, tierna y versatil. El punto de partida perfecto para cualquier parrillada.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>La hamburguesa más versátil de nuestra carta. Elaborada con una mezcla equilibrada de ternera y cerdo de nuestra ganadería propia en Asturias, esta hamburguesa tiene lo mejor de ambas carnes: la estructura y sabor de la ternera, la jugosidad y terneza del cerdo.</p><p style="margin-top:8px">No lleva rellenos ni conservantes artificiales. Solo carne de calidad, sazonada con nuestro toque artesanal. El resultado es una hamburguesa jugosa, de textura firme pero tierna, que funciona igual de bien a la parrilla, a la plancha o en sartén.</p><p style="margin-top:8px">Es nuestra opción más popular entre quienes piden por primera vez --- y la que siempre vuelve a estar en el carrito.</p></div></details>
+            <div class="produto-meta"><span>Parrillada, plancha, sartén</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa de Ternera Asturiana</h4><span class="produto-preco">2,50 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">Ternera asturiana en estado puro.</p>
+            <p class="copy-text">100% ternera asturiana de nuestros pastos. Natural, sabrosa y con un sabor que habla por si solo. La eleccion clásica para los que quieren carne de verdad.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>Para los puristas de la carne, esta es la hamburguesa. Cien por cien ternera asturiana de nuestra ganadería propia, sin mezclas, sin aditivos. Solo carne de primera criada en pasto extensivo, con el sabor limpio y profundo que solo da la ternera de verdad.</p><p style="margin-top:8px">La textura es firme, el bocado es jugoso y el sabor es el de siempre: el de la carne bien criada, de una raza que ha crecido comiendo hierba en los prados de Asturias.</p><p style="margin-top:8px">No necesita mucho más que unas brasas, un buen pan y ganas de disfrutar.</p></div></details>
+            <div class="produto-meta"><span>Parrilla, plancha, barbacoa</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa de Pollo</h4><span class="produto-preco">2,30 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">Ligera, fresca y llena de sabor.</p>
+            <p class="copy-text">Elaborada con pollo de primera calidad. Suave, jugosa y perfecta para quienes buscan una opción más ligera sin renunciar al sabor artesanal.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>No todas las hamburguesas tienen que ser contundentes. Nuestra hamburguesa de pollo es la prueba de que se puede ser ligero y sabroso al mismo tiempo.</p><p style="margin-top:8px">Elaborada con pollo de primera calidad, tiene una textura suave y jugosa que funciona a la perfección en la parrilla o la plancha. Es la opción favorita de quienes cuidan la alimentación, de los ninos de la casa y de quienes simplemente quieren variar sin perder calidad.</p><p style="margin-top:8px">Artesanal como todas las nuestras. Sin rellenos, sin trucos. Solo buen pollo, bien trabajado.</p></div></details>
+            <div class="produto-meta"><span>Alimentación ligera, ninos</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 2-3 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa de Cerdo con Jalapenos</h4><span class="produto-preco">2,50 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">Para los que les gusta con caracter.</p>
+            <p class="copy-text">Lomo de cerdo fresco con jalapeños naturales. Un sabor intenso con un toque picante que engancha. Pensada para los más atrevidos de la parrilla.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>Si buscas algo que rompa la rutina, aquí la tienes. Nuestra hamburguesa de cerdo con jalapeños combina la jugosidad del lomo de cerdo fresco con el toque picante y fresco de jalapeños naturales.</p><p style="margin-top:8px">No es un picante que te quema: es un punto justo que despierta el paladar y le da personalidad a cada bocado. Ideal para quienes quieren algo diferente en su parrillada.</p><p style="margin-top:8px">Elaborada a mano en nuestro obrador, como todas nuestras hamburguesas. Ingredientes reales, sabor real.</p></div></details>
+            <div class="produto-meta"><span>Parrillada con amigos, sabores intensos</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa de Lomo de Cerdo, Piquillo y Bacon</h4><span class="produto-preco">2,80 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">Una propuesta gourmet en cada bocado.</p>
+            <p class="copy-text">Cerdo jugoso, pimientos del piquillo y bacon ahumado. Matices únicos que conquistan. Una combinación que sube el nivel de cualquier parrillada.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>Esta hamburguesa no es la típica. Es una propuesta gourmet pensada para quienes aprecian los matices.</p><p style="margin-top:8px">El lomo de cerdo le aporta jugosidad y base carnosa. Los pimientos del piquillo traen un dulzor sutil y un aroma inconfundible. Y el bacon ahumado remata con ese punto crujiente y salado que lo redondea todo.</p><p style="margin-top:8px">El resultado es una hamburguesa con capas de sabor: primero el cerdo, luego el piquillo, al final el ahumado del bacon. Cada bocado cuenta una historia.</p><p style="margin-top:8px">Elaborada a mano en nuestro obrador con ingredientes de primera. Para los que entienden que una buena hamburguesa es mucho más que carne picada.</p></div></details>
+            <div class="produto-meta"><span>Parrillada gourmet, cenas especiales</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card" style="border-color:#d4a853;border-width:2px">
+            <div class="produto-header"><h4>Hamburguesa Asturiana</h4><span class="produto-preco">3,70 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">El sabor de Asturias en una hamburguesa.</p>
+            <p class="copy-text">Picadillo asturiano mezclado con un toque cremoso de queso azul. Un sabor auténtico y profundo que une tradición y gourmet. Única en su especie.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>Si tuviéramos que elegir una sola hamburguesa para explicar quien somos, sería ésta.</p><p style="margin-top:8px">La Hamburguesa Asturiana está elaborada con picadillo --- la preparación de carne más emblemática de la gastronomía asturiana --- mezclado con queso azul de Asturias, que le aporta un toque cremoso, intenso y absolutamente inconfundible.</p><p style="margin-top:8px">Es tradición pura con un acabado gourmet. El picadillo trae el sabor de siempre, el queso azul lo eleva a otro nivel. En la parrilla o la plancha, el queso se funde ligeramente y se integra con la carne creando una experiência que no vas a encontrar en ningún otro sitio.</p><p style="margin-top:8px">No es una hamburguesa más. Es nuestra hamburguesa. La que representa lo que Carnicas Dani significa.</p></div></details>
+            <div class="produto-meta"><span>Amantes de Asturias</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card" style="border-color:#d4a853;border-width:2px">
+            <div class="produto-header"><h4>Hamburguesa Explosiva</h4><span class="produto-preco">5,80 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">Nuestra hamburguesa más premium. Y se nota.</p>
+            <p class="copy-text">Ternera asturiana de ganadería propia con kiku de carne fondo y cebolla crujiente. Intensa, cremosa y con un contraste brutal. Para los que quieren lo mejor.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>La Explosiva no es una hamburguesa. Es una declaración de intenciones.</p><p style="margin-top:8px">Elaborada con ternera asturiana de nuestra ganadería propia, lleva kiku de carne fondo --- un concentrado de sabor umami que le da una profundidad impresionante --- y cebolla crujiente que aporta contraste de textura en cada bocado.</p><p style="margin-top:8px">El resultado es una hamburguesa intensa, cremosa, con una complejidad de sabor que te hace cerrar los ojos y pensar: "esto es otra cosa".</p><p style="margin-top:8px">Es nuestra hamburguesa más premium. La más arriesgada. Y la que más adictos genera. Si buscas la experiência definitiva de hamburguesa artesanal, esta es.</p></div></details>
+            <div class="produto-meta"><span>PREMIUM</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa Cachopa</h4><span class="produto-preco">4,70 EUR / ud (~300g)</span></div>
+            <p class="produto-tagline">La cachopa asturiana hecha hamburguesa.</p>
+            <p class="copy-text">Ternera jugosa, jamón serrano, queso gouda fundido y pimientos del piquillo. Mezcla intensa y cremosa con el sello asturiano que la hace única.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>La cachopa es el plato más emblemático de Asturias. Y nosotros la hemos convertido en hamburguesa.</p><p style="margin-top:8px">Carne de ternera jugosa como base, jamón serrano que le aporta profundidad y ese punto salado, queso gouda que se funde en el centro creando una cremosidad irresistible, y pimientos del piquillo que rematan con dulzura y color.</p><p style="margin-top:8px">Es más grande que nuestras hamburguesas estándar (aprox. 300g) porque una cachopa no se hace a medias. El bocado es denso, sabroso, con capas de sabor que se van descubriendo: primero la ternera, luego el jamón, después el queso fundido, al final el piquillo.</p><p style="margin-top:8px">Para los asturianos, es nostalgia hecha hamburguesa. Para los que aún no han probado una cachopa, es la mejor introducción posible.</p></div></details>
+            <div class="produto-meta"><span>Especialidad Asturiana</span><span>~300g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa de Pollo con Espinacas</h4><span class="produto-preco">3,00 EUR / ud (200g)</span></div>
+            <p class="produto-tagline">Ligera, fresca y con un toque verde.</p>
+            <p class="copy-text">Pechuga de pollo, espinacas, ajo, perejil y pimienta negra. Suave, jugosa y con un toque fresco. La burger más ligera sin perder ni un gramo de sabor.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>No siempre se trata de contundencia. A veces quieres algo más fresco, más ligero, pero que siga siendo una hamburguesa de verdad --- artesanal, jugosa y con sabor.</p><p style="margin-top:8px">Nuestra hamburguesa de pollo con espinacas es exactamente eso. Pechuga de pollo como base, espinacas frescas que aportan un toque verde y una textura sutil, ajo y perejil que redondean el aroma, y pimienta negra que le da ese punto justo de caracter.</p><p style="margin-top:8px">Es la favorita de quienes cuidan la dieta, de quienes buscan variedad en la parrillada y de quienes simplemente aprecian los sabores limpios y equilibrados.</p><p style="margin-top:8px">Artesanal como todas las nuestras. Hecha a mano, sin rellenos, sin conservantes.</p></div></details>
+            <div class="produto-meta"><span>Opção Saudavel</span><span>200g / unidad</span><span>Refrigerada 0-4 C | 2-3 días</span></div>
+        </div>
+
+        <div class="produto-card">
+            <div class="produto-header"><h4>Hamburguesa Criolla</h4><span class="produto-preco">2,80 EUR / ud (100g)</span></div>
+            <p class="produto-tagline">Pequena, intensa y adictiva.</p>
+            <p class="copy-text">Carne de cerdo con especias criollas y ajo. Jugosa, sabrosa y con ese punto casero que engancha. Tamaño slider ideal para parrilla o plancha.</p>
+            <details class="desc-completa"><summary>Ver descripción completa</summary><div class="inner"><p>La Criolla es nuestra hamburguesa más compacta, pero no te dejes engañar por el tamaño. Lo que le falta en gramos le sobra en sabor.</p><p style="margin-top:8px">Carne de cerdo fresca sazonada con especias criollas y ajo, que le dan un aroma envolvente y un sabor con cuerpo, con ese punto casero de las recetas que se pasan de generación en generación.</p><p style="margin-top:8px">Su formato de 100g la convierte en la hamburguesa perfecta para slider: pon varias en la parrilla, acompaña con diferentes salsas y deja que cada uno se monte la suya. En una barbacoa con amigos, la Criolla desaparece en minutos.</p><p style="margin-top:8px">También funciona genial como aperitivo, como tapa o como complemento a una parrillada más grande. Es pequeña, intensa y tremendamente adictiva.</p></div></details>
+            <div class="produto-meta"><span>Formato Slider</span><span>100g / unidad</span><span>Refrigerada 0-4 C | 3-5 días</span></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 4</p><h3>Banner CTA en Tienda</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">No encuentras lo que buscas? Preparamos tu pedido a medida.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Escríbenos por WhatsApp con lo que necesitas y te montamos un pack personalizado. Cantidades, sabores, formatos --- lo que tu quieras.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Pedir por WhatsApp >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 5</p><h3>Barra de Beneficios</h3>
+        <div class="copy-block"><span class="label corpo">Faja horizontal</span><p class="copy-text"><strong>Envío en Frío</strong> a toda España | <strong>Precio Exclusivo</strong> Web | <strong>Elaboración</strong> 100% Artesanal | <strong>Garantía:</strong> si llega mal, lo reponemos</p></div>
+    </div>
+</div>
+
+<!-- PAGINA 4 - KITS -->
+<div class="page" id="p4-es">
+    <div class="page-title"><h2>Página 4 - Kits y Ofertas</h2></div>
+    <div class="secao">
+        <p class="secao-label">Sección 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Kits de parrillada listos para disfrutar</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">No pierdas tiempo calculando cantidades ni buscando en tres sitios. Elige tu pack, nosotros nos encargamos de que todo sea de primera. Carnes y hamburguesas artesanales de ganadería propia, preparadas para la brasa.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ver Todos los Packs >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 2</p><h3>Por Que Elegir un Kit</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Todo lo que necesitas para tu parrillada en un solo pedido</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Organizar una barbacoa puede ser un lio: qué cuánta carne compro, qué para cuántas personas, qué si llevo de esto o de lo otro. Los kits de Carnicas Dani estan pensados para quitarte ese dolor de cabeza.</p><p class="copy-text" style="margin-top:12px">Cada pack está diseñado con el equilibrio justo de carnes, hamburguesas y preparados para que no sobre ni falte. Con producto de ganadería propia, elaboración artesanal y envío en frío a tu puerta.</p><p class="copy-text" style="margin-top:12px">Tu solo preocupate de encender las brasas.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Cantidades Calculadas</h4><p>Cada kit está pensado para un número concreto de personas. Sin desperdiciar, sin quedarte corto.</p></div>
+            <div class="pilar"><h4>Variedad Garantizada</h4><p>Mezcla de hamburguesas, carnes y elaborados artesanales para que la parrillada tenga de todo.</p></div>
+            <div class="pilar"><h4>Precio Optimizado</h4><p>Los packs tienen un precio más ajustado que comprar cada producto por separado. Mejor precio, misma calidad.</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Secciónes 3-6</p><h3>Los 4 Packs</h3>
+        <div class="produto-card"><div class="produto-header"><h4>Pack Degustación</h4><span class="produto-preco">Precio a definir</span></div><div class="produto-meta" style="margin-bottom:12px"><span>~1,2 kg</span><span>2-3 personas</span><span style="background:#d4a853;color:#1a3a2a">Ideal para probar</span></div><p class="copy-text">El primer paso para conocer Carnicas Dani. Una selección cuidada de nuestras hamburguesas más representativas y un embutido artesanal para que pruebes la calidad sin compromiso.</p><p class="copy-text" style="margin-top:8px">Perfecto para una cena en pareja, una comida en casa o simplemente para descubrir si esto es lo que estabas buscando (spoiler: lo es).</p><p class="copy-text" style="margin-top:12px"><strong>Incluye:</strong></p><p class="copy-text"><ul><li>Selección de hamburguesas artesanales variadas</li><li>Embutido artesanal asturiano</li><li>[Confirmar contenido exacto con el cliente]</li></ul></p><div class="destaque-block">Si es tu primera compra, este es el pack que te recomendamos. Pruebas lo mejor y decides si quieres más.</div></div>
+        <div class="produto-card" style="border-color:#d4a853;border-width:2px"><div class="produto-header"><h4>Pack Top</h4><span class="produto-preco">Precio a definir</span></div><div class="produto-meta" style="margin-bottom:12px"><span>~4 kg</span><span>4-6 personas</span><span style="background:#8b3a3a;color:#fff">El más vendido</span></div><p class="copy-text">Nuestro pack estrella. El que más se vende y el que más repiten nuestros clientes. Una selección generosa de hamburguesas artesanales de distintos sabores, carne para parrilla y embutido asturiano. Todo lo que necesitas para una barbacoa de verdad.</p><p class="copy-text" style="margin-top:8px">Diseñado para la típica quedada con amigos, la comida familiar del domingo o ese asado de fin de semana que te mereces.</p><p class="copy-text" style="margin-top:12px"><strong>Incluye:</strong></p><p class="copy-text"><ul><li>Variedad amplia de hamburguesas artesanales (distintos sabores)</li><li>Carne fresca para parrilla</li><li>Embutido artesanal asturiano</li><li>[Confirmar contenido exacto con el cliente]</li></ul></p><div class="destaque-block">El favorito de nuestros clientes. Si buscas la relación calidad-cantidad-precio perfecta, es este.</div></div>
+        <div class="produto-card"><div class="produto-header"><h4>Pack Fiesta</h4><span class="produto-preco">Precio a definir</span></div><div class="produto-meta" style="margin-bottom:12px"><span>~7-12 kg</span><span>8-12 personas</span><span style="background:#5a4a7a;color:#fff">Para las grandes ocasiones</span></div><p class="copy-text">La parrillada grande. El pack para las celebraciones que se recuerdan: cumpleaños, reuniones familiares, el asado con toda la pandilla, la barbacoa de verano.</p><p class="copy-text" style="margin-top:8px">Surtido completo de carnes, hamburguesas de distintos tipos, embutidos y elaborados artesanales para que no falte absolutamente nada. Todo de ganadería propia, todo hecho a mano, todo enviado en frío.</p><p class="copy-text" style="margin-top:12px"><strong>Incluye:</strong></p><p class="copy-text"><ul><li>Surtido completo de hamburguesas artesanales (múltiples sabores)</li><li>Selección de carnes frescas para parrilla</li><li>Variedad de embutidos artesanales asturianos</li><li>Preparados para parrilla</li><li>[Confirmar contenido exacto con el cliente]</li></ul></p><div class="destaque-block">Para 8-12 personas. Si la celebración es grande, este pack está a la altura.</div></div>
+        <div class="produto-card" style="border-style:dashed"><div class="produto-header"><h4>Pack Personalizado</h4><span class="produto-preco">Segun selección</span></div><div class="produto-meta" style="margin-bottom:12px"><span>Peso a medida</span><span>Las que tu quieras</span><span style="background:#2d5a3f;color:#fff">Tu decides</span></div><p class="copy-text">Ningún pack encaja con lo que necesitas? Sin problema. Escríbenos por WhatsApp y te montamos un pedido a tu medida.</p><p class="copy-text" style="margin-top:8px">Dinos cuántas personas sois, qué tipo de productos prefieres, si hay alguna hamburguesa que no puede faltar, si quieres embutido extra o si alguien del grupo prefiere pollo. Nosotros calculamos cantidades, seleccionamos productos y te preparamos un pack único.</p><p class="copy-text" style="margin-top:8px">Es como hablar con tu carnicero de confianza, pero desde el móvil.</p><p class="copy-text" style="margin-top:12px"><strong>Cómo funciona:</strong></p><p class="copy-text"><ol><li>Escríbenos por WhatsApp contándonos lo que necesitas</li><li>Te asesoramos y te enviamos una propuesta con productos y precio</li><li>Confirmas, pagamos y te lo enviamos en frío</li></ol></p><span class="cta-text" style="margin-top:12px">Pedir mi Pack por WhatsApp >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 7</p><h3>Comparativa de Packs</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Cuál es el pack ideal para ti?</p></div>
+        <div class="tabela-wrapper"><table><thead><tr><th>Característica</th><th>Degustación</th><th>Top</th><th>Fiesta</th><th>Personalizado</th></tr></thead><tbody><tr><td>Peso apróximado</td><td>~1,2 kg</td><td>~4 kg</td><td>~7-12 kg</td><td>A medida</td></tr><tr><td>Personas</td><td>2-3</td><td>4-6</td><td>8-12</td><td>Tu decides</td></tr><tr><td>Hamburguesas variadas</td><td>Si</td><td>Si</td><td>Si</td><td>Si</td></tr><tr><td>Carne para parrilla</td><td>--</td><td>Si</td><td>Si</td><td>Opcional</td></tr><tr><td>Embutido artesanal</td><td>Si</td><td>Si</td><td>Si</td><td>Opcional</td></tr><tr><td>Ideal para</td><td>Probar</td><td>Quedada amigos</td><td>Celebraciones</td><td>Lo que necesites</td></tr></tbody></table></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 8</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Tu parrillada perfecta está a un click</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Elige tu pack, añádelo al carrito y recíbelo en frío a tu puerta. O escríbenos por WhatsApp y te armamos algo a medida. Tu decides cómo, nosotros ponemos la calidad.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Volver a la Tienda >>></span><span class="cta-text secondary">Pedir por WhatsApp >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 5 - NUESTRAS CARNES -->
+<div class="page" id="p5-es">
+    <div class="page-title"><h2>Página 5 - Nuestras Carnes (Diferenciales)</h2></div>
+    <div class="secao">
+        <p class="secao-label">Sección 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">No toda la carne es igual. Y nosotros queremos que lo sepas.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Entender qué compras es el primer paso para comer mejor. Aquí te explicamos de dónde vienen nuestras carnes, qué las hace especiales y por qué el origen importa más de lo que crees.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 2</p><h3>De Donde Viene Nuestra Carne</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Ganadería propia: la diferencia que se prueba</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Cuando decimos "ganadería propia" no es un eslogan de marketing. Es un hecho. Nuestro ganado nace, se cria y pace en los prados de Asturias. Nosotros controlamos el proceso completo: la alimentación, el bienestar, el ritmo de crecimiento y el momento óptimo de cada animal.</p><p class="copy-text" style="margin-top:12px">Eso significa dos cosas:</p><p class="copy-text" style="margin-top:12px"><strong>Primera:</strong> sabemos exactamente qué hay detrás de cada pieza de carne que te llega. No hay intermediarios, no hay incertidumbre, no hay sorpresas.</p><p class="copy-text" style="margin-top:12px"><strong>Segunda:</strong> la calidad se nota. Un animal que ha pastado libremente, sin estres, con una alimentación natural, produce una carne con un sabor, una textura y una terneza que no se consiguen con cria intensiva.</p></div>
+        <div class="destaque-block">La carne del supermercado puede venir de cualquier sitio. La nuestra viene de nuestros pastos. Y eso se nota en el primer bocado.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 3</p><h3>Ternera Asturiana</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Ternera Asturiana: la reina de nuestra carnicería</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">La ternera asturiana es el pilar de Carnicas Dani. Criada en pasto extensivo en los valles de Asturias, nuestra ternera tiene un sabor profundo, una textura firme pero tierna, y un nivel de jugosidad que solo da la cria natural.</p></div>
+        <div class="copy-block"><span class="label corpo">Por qué es especial</span><p class="copy-text"><ul><li><strong>Alimentación natural:</strong> hierba y pasto fresco, sin piensos industriales como base</li><li><strong>Cria extensiva:</strong> las reses pacen libremente, sin confinamiento</li><li><strong>Bienestar animal:</strong> el estrés altera la calidad de la carne --- nuestro ganado vive tranquilo</li><li><strong>Maduración adecuada:</strong> respetamos los tiempos de maduración para que la carne alcance su punto óptimo de sabor y terneza</li></ul></p></div>
+        <div class="copy-block"><span class="label corpo">Productos con ternera asturiana</span><p class="copy-text"><ul><li>Hamburguesa de Ternera Asturiana</li><li>Hamburguesa Mixta de Ternera y Cerdo</li><li>Hamburguesa Asturiana (con picadillo y queso azul)</li><li>Hamburguesa Explosiva (premium, ganadería propia)</li><li>Hamburguesa Cachopa</li><li>Carne fresca de ternera para parrilla</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 4</p><h3>Cerdo de Calidad</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Cerdo: jugosidad y versatilidad</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">El cerdo es la base de muchas de nuestras hamburguesas y elaborados más populares. Trabajamos con cerdo de primera calidad, seleccionando las mejores piezas --- especialmente el lomo --- para garantizar jugosidad, terneza y un sabor limpio.</p></div>
+        <div class="copy-block"><span class="label corpo">Por qué lo elegimos</span><p class="copy-text"><ul><li><strong>Piezas seleccionadas:</strong> lomo de cerdo fresco como base principal</li><li><strong>Jugosidad natural:</strong> la grasa infiltrada del buen cerdo es la clave de una hamburguesa jugosa</li><li><strong>Versatilidad:</strong> se combina con jalapeños, piquillo, bacon, especias criollas... cada combinación funciona</li><li><strong>Tradición asturiana:</strong> el cerdo es protagonista de muchos platos típicos de la gastronomía asturiana</li></ul></p></div>
+        <div class="copy-block"><span class="label corpo">Productos con cerdo</span><p class="copy-text"><ul><li>Hamburguesa Mixta de Ternera y Cerdo</li><li>Hamburguesa de Cerdo con Jalapeños</li><li>Hamburguesa de Lomo de Cerdo, Piquillo y Bacon</li><li>Hamburguesa Criolla</li><li>Embutidos artesanales (chorizo, etc.)</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 5</p><h3>Pollo de Primera</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pollo: ligero sin renunciar al sabor</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">No todo el mundo busca lo más contundente. Para quienes prefieren una opción más ligera, trabajamos con pollo de primera calidad: pechuga fresca, sin inyecciones de agua, sin rellenos.</p><p class="copy-text" style="margin-top:12px">Nuestras hamburguesas de pollo son suaves, jugosas y con un sabor limpio que funciona a la perfección tanto a la parrilla como a la plancha.</p></div>
+        <div class="copy-block"><span class="label corpo">Por qué es diferente</span><p class="copy-text"><ul><li><strong>Pechuga de primera:</strong> sin agua añadida, sin conservantes</li><li><strong>Textura real:</strong> no es esa pasta compacta de las hamburguesas de supermercado</li><li><strong>Ingredientes frescos:</strong> espinacas, ajo, perejil, pimienta negra --- complementos reales, no saborizantes</li><li><strong>Artesanal:</strong> moldeada a mano en nuestro obrador, como todas</li></ul></p></div>
+        <div class="copy-block"><span class="label corpo">Productos con pollo</span><p class="copy-text"><ul><li>Hamburguesa de Pollo</li><li>Hamburguesa de Pollo con Espinacas</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 6</p><h3>Pasto Extensivo vs. Cria Intensiva</h3>
+        <div class="tabela-wrapper"><table><thead><tr><th>Aspecto</th><th style="background:#d4a853;color:#1a3a2a">Pasto Extensivo (Carnicas Dani)</th><th style="background:#666">Cria Intensiva (Industrial)</th></tr></thead><tbody><tr><td>Alimentación</td><td>Pasto natural, hierba fresca</td><td>Piensos compuestos y cereales</td></tr><tr><td>Espacio</td><td>Campos abiertos, libertad de movimiento</td><td>Confinamiento en naves</td></tr><tr><td>Ritmo de crecimiento</td><td>Natural, sin forzar</td><td>Acelerado con suplementos</td></tr><tr><td>Estres del animal</td><td>Minimo</td><td>Elevado</td></tr><tr><td>Sabor de la carne</td><td>Profundo, matizado, con caracter</td><td>Plano, homogéneo</td></tr><tr><td>Textura</td><td>Firme y tierna</td><td>Variable, a veces fibrosa</td></tr><tr><td>Grasa infiltrada</td><td>Natural, equilibrada</td><td>Irregular</td></tr><tr><td>Trazabilidad</td><td>Completa --- del prado al producto</td><td>Parcial o inexistente</td></tr></tbody></table></div>
+        <div class="destaque-block">No es cuestion de opinión. Es biología. Un animal que vive bien produce una carne mejor. Así de simple.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 7</p><h3>Compromiso con la Calidad</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nuestro compromiso contigo</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Cada producto que sale de Carnicas Dani cumple con nuestros estándares de calidad:</p><p class="copy-text" style="margin-top:12px"><ul><li><strong>Materia prima de primera:</strong> seleccionamos la carne, los ingredientes y los complementos con el mismo criterio con el que elegiríamos para nuestra propia mesa</li><li><strong>Elaboración artesanal:</strong> todo se hace a mano en nuestro obrador, en lotes pequeños y controlados</li><li><strong>Sin conservantes artificiales:</strong> ingredientes reales, recetas honestas</li><li><strong>Registro sanitario:</strong> cumplimos con toda la normativa sanitaria y de seguridad alimentaria vigente</li><li><strong>Envío en frío:</strong> cadena de frío garantizada para que el producto llegue en óptimas condiciones</li></ul></p></div>
+        <div class="destaque-block">Si no lo pondríamos en nuestra mesa, no sale de nuestro obrador.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 8</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Ahora que sabes lo que comes, elige lo mejor</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Explora nuestra tienda y lleva a tu mesa carne de ganadería propia, elaborada a mano y enviada en frío desde Asturias.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir a la Tienda >>></span><span class="cta-text secondary">Ver Kits de Parrillada >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 6 - PEDIDOS Y CONTACTO -->
+<div class="page" id="p6-es">
+    <div class="page-title"><h2>Página 6 - Pedidos y Contacto</h2></div>
+    <div class="secao">
+        <p class="secao-label">Sección 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Haz tu pedido o habla con nosotros</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Compra directamente en la tienda, pídenos un pack a medida o escríbenos para cualquier consulta. Estamos aquí para ayudarte --- como tu carnicero de confianza, pero a un mensaje de distância.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 2</p><h3>Cómo Hacer Tu Pedido</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Así de fácil es pedir en Carnicas Dani</p></div>
+        <div class="pilares" style="grid-template-columns:1fr">
+            <div class="pilar"><h4>Paso 1 - Elige tus productos</h4><p>Navega por la tienda, elige hamburguesas, kits, embutidos o carne fresca. Anade al carrito lo que quieras.</p></div>
+            <div class="pilar"><h4>Paso 2 - Completa tu pedido</h4><p>Introduce tus datos de envío y elige tu método de pago. Todo el proceso es seguro y rápido.</p></div>
+            <div class="pilar"><h4>Paso 3 - Lo preparamos en fresco</h4><p>En cuanto recibimos tu pedido, preparamos todo en nuestro obrador y lo envasamos al vacio para conservar la frescura.</p></div>
+            <div class="pilar"><h4>Paso 4 - Enviamos en frio</h4><p>Tu pedido sale en envase isotérmico con frío garantizado para que llegue en perfectas condiciones a cualquier punto de España.</p></div>
+            <div class="pilar"><h4>Paso 5 - Disfruta</h4><p>Recibe en casa, enciende la parrilla y disfruta de carne artesanal de verdad. Así de sencillo.</p></div>
+        </div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir a la Tienda >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 3</p><h3>Pedidos Personalizados</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pedidos a medida por WhatsApp</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Además de la tienda online, puedes hacer pedidos completamente personalizados a traves de WhatsApp.</p><p class="copy-text" style="margin-top:12px"><ul><li>Quieres un pack para 20 personas? Escríbenos.</li><li>Necesitas solo hamburguesas de un sabor concreto? Escríbenos.</li><li>Tienes un evento, una celebración o una barbacoa especial? Escríbenos.</li><li>No sabes qué pedir ni en qué cantidad? Escríbenos y te asesoramos.</li></ul></p><p class="copy-text" style="margin-top:12px">Somos tu carnicero de confianza. Solo que en lugar de hacer cola, nos mandas un mensaje.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Pedir por WhatsApp >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 4</p><h3>Pedidos para Empresas y Eventos</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pedidos para empresas, hostelería y eventos</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Si tienes un restaurante, bar, catering o empresa y necesitas suministro regular de hamburguesas artesanales o productos cárnicos, contacta con nosotros para condiciones especiales.</p><p class="copy-text" style="margin-top:12px"><strong>Ofrecemos:</strong></p><p class="copy-text"><ul><li>Precios especiales para hostelería y empresas</li><li>Pedidos recurrentes con frecuencia pactada</li><li>Personalización de producto (peso, ingredientes, formato)</li><li>Facturación adaptada</li><li>Atención directa y prioritaria</li></ul></p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Solicitar Condiciones para Empresas >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 5</p><h3>Canales de Contacto</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Contacta con nosotros</p></div>
+        <div class="pilares" style="grid-template-columns:1fr 1fr">
+            <div class="pilar" style="border-color:#25D366;border-width:2px"><h4>WhatsApp --- Atención Directa</h4><p>Nuestro canal más rápido. Escríbenos para pedidos, dudas, recomendaciones o lo que necesites. Respondemos como si estuvieras en nuestra carnicería.</p><br><span class="cta-text">Escribir por WhatsApp >>></span></div>
+            <div class="pilar"><h4>Correo Electrónico</h4><p>Para consultas detalladas, pedidos de empresa o cuestiones que requieran documentación.</p><p style="margin-top:8px;font-weight:600">sm.cesarmartinez@gmail.com</p></div>
+            <div class="pilar"><h4>Instagram</h4><p>Síguenos para ver nuestros productos, recetas, detrás de cámaras y novedades. La mejor forma de conocernos día a día.</p><p style="margin-top:8px;font-weight:600">@carnicasdani</p></div>
+            <div class="pilar"><h4>Teléfono</h4><p>Si prefieres llamar, aquí estamos. Atención en horario comercial.</p><p style="margin-top:8px;font-weight:600">[número a definir]</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 6</p><h3>Formulario de Contacto</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">O si prefieres, déjanos un mensaje</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Rellena el formulario y te responderemos lo antes posible.</p></div>
+        <div class="copy-block"><span class="label corpo">Campos</span><p class="copy-text"><ul><li>Nombre *</li><li>E-mail *</li><li>Teléfono / WhatsApp *</li><li>Motivo de contacto (dropdown): Pedido personalizado | Consulta sobre productos | Pedido para empresa/hosteleria | Devolucion o incidencia | Otro</li><li>Tu mensaje *</li></ul></p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Enviar Mensaje >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 7</p><h3>CTA Refuerzo</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Tienes dudas? El WhatsApp es lo más rápido.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Escríbenos y te respondemos en un momento. Sin formularios, sin esperas.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Abrir WhatsApp >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 7 - ENVIOS Y FAQ -->
+<div class="page" id="p7-es">
+    <div class="page-title"><h2>Página 7 - Envíos y Preguntas Frecuentes</h2></div>
+    <div class="secao">
+        <p class="secao-label">Sección 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Envíos y preguntas frecuentes</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Todo lo que necesitas saber sobre como enviamos, plazos, conservación y las dudas más habituales de nuestros clientes. Si no encuentras tu respuesta, escríbenos.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 2</p><h3>Información de Envíos</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Cómo enviamos tu pedido</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Enviamos a toda la península española. Tu pedido se prepara en fresco en nuestro obrador, se envasa al vacío y se empaqueta en envase isotérmico con frío para garantizar que llega en perfectas condiciones.</p></div>
+        <div class="pilares" style="grid-template-columns:1fr">
+            <div class="pilar"><h4>A dónde enviamos?</h4><p>Realizamos envíos a toda la España peninsular. Para Baleares, Canarias, Ceuta y Melilla, consulta por WhatsApp para disponibilidad y coste.</p></div>
+            <div class="pilar"><h4>Cuándo llega mi pedido?</h4><p>Los pedidos se preparan entre 24 y 48 horas hábiles tras la confirmación del pago. El plazo de entrega depende de la zona, pero en la mayoría de destinos es de 24 a 48 horas adicionales una vez que sale del obrador. Te enviamos un código de seguimiento para que puedas rastrear tu paquete en todo momento.</p></div>
+            <div class="pilar"><h4>Cadena de frío garantizada</h4><p>Todos los pedidos se envían en envase isotérmico con frío (gel refrigerante o hielo seco según la época del año). Nuestro objetivo es que el producto te llegue como si acabaras de salir de nuestra carnicería: fresco, en temperatura y listo para disfrutar.</p></div>
+            <div class="pilar"><h4>Cuánto cuesta el envío?</h4><p>El coste de envío se calcula automáticamente en el proceso de compra según tu ubicación y el peso del pedido. Para pedidos superiores a [importe a definir], el envío es gratuito. Consulta condiciones en el carrito.</p><p class="copy-text" style="margin-top:8px;font-size:0.85rem;color:#8b3a3a">[NOTA PARA EL CLIENTE: Definir si hay envío gratis a partir de un importe mínimo, coste fijo o variable. Este dato es clave para la conversión.]</p></div>
+            <div class="pilar"><h4>Qué hago cuando recibo mi pedido?</h4><p>Al recibir tu pedido, introduce los productos en el frigorífico inmediatamente. Si no vas a consumirlos en los próximos 3-5 días, puedes congelarlos directamente en su envase al vacío. Al descongelar, hazlo siempre en el frigorífico (nunca a temperatura ambiente) para mantener la calidad y la seguridad alimentaria.</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 3</p><h3>Garantía</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nuestra garantía: sin riesgo para ti</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Si tu pedido llega en mal estado --- producto dañado, envase roto, cadena de frío comprometida --- lo reponemos o te devolvemos el dinero. Sin preguntas. Sin letra pequeña. Sin complicaciones.</p><p class="copy-text" style="margin-top:12px">Mándanos una foto por WhatsApp con lo que ha ocurrido y lo solucionamos inmediatamente. Así de simple.</p></div>
+        <div class="destaque-block">Nuestra reputación se construye pedido a pedido. No vamos a arriesgarla por un envio. Si algo no está bien, lo arreglamos. Punto.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 4</p><h3>Preguntas Frecuentes</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Preguntas frecuentes</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Las dudas más habituales de nuestros clientes, resueltas.</p></div>
+        <h4 class="faq-categoria">Sobre los Productos</h4>
+        <details class="faq-item"><summary>De dónde viene la carne de Carnicas Dani?</summary><div class="faq-resposta">Nuestra carne de ternera proviene de nuestra propia ganadería en Asturias. Criamos nuestro ganado en pasto extensivo, controlando toda la cadena desde el campo hasta el obrador. El cerdo y el pollo son de primera calidad, seleccionados por nosotros con los mismos estándares de exigencia.</div></details>
+        <details class="faq-item"><summary>Las hamburguesas llevan conservantes o aditivos artificiales?</summary><div class="faq-resposta">No. Nuestras hamburguesas se elaboran con ingredientes frescos y naturales: carne, especias, verduras y condimentos reales. No añadimos conservantes artificiales, glutamato, ni rellenos de pan rallado o soja. Lo que ves en los ingredientes es lo que llevan, nada más.</div></details>
+        <details class="faq-item"><summary>Cuánto pesan las hamburguesas?</summary><div class="faq-resposta">La mayoría de nuestras hamburguesas pesan 200g por unidad. La Hamburguesa Cachopa pesa aproximadamente 300g (es más grande por sus ingredientes). Y la Hamburguesa Criolla pesa 100g (formato slider/tapa). El peso exacto de cada producto está indicado en su ficha.</div></details>
+        <details class="faq-item"><summary>Puedo comprar hamburguesas sueltas o solo en packs?</summary><div class="faq-resposta">Puedes comprar tanto unidades sueltas como packs. En la tienda online cada hamburguesa se vende por unidad, y los kits de parrillada son selecciones predefinidas con variedad de productos. También puedes pedirnos un pack personalizado por WhatsApp.</div></details>
+        <h4 class="faq-categoria">Sobre Pedidos y Compra</h4>
+        <details class="faq-item"><summary>Cómo hago un pedido?</summary><div class="faq-resposta">Tienes dos opciones: comprar directamente en la tienda online (añadir al carrito, datos de envío, pago seguro) o escribirnos por WhatsApp para un pedido personalizado. En ambos casos, preparamos todo en fresco y te lo enviamos.</div></details>
+        <details class="faq-item"><summary>Qué métodos de pago aceptáis?</summary><div class="faq-resposta">Aceptamos tarjeta de crédito/débito (Visa, Mastercard), Bizum y transferencia bancaria. El proceso de pago online es 100% seguro. [Confirmar métodos de pago con el cliente.]</div></details>
+        <details class="faq-item"><summary>Puedo modificar o cancelar un pedido una vez realizado?</summary><div class="faq-resposta">Si aún no hemos empezado a preparar tu pedido, sí. Escríbenos por WhatsApp lo antes posible y lo gestionamos. Una vez que el pedido entra en producción en el obrador, no es posible modificarlo ni cancelarlo.</div></details>
+        <details class="faq-item"><summary>El precio en la web es el mismo que en tienda física?</summary><div class="faq-resposta">No. Los precios en la web son exclusivos y más económicos que en la tienda física. Es nuestra forma de agradecer la compra online y compensar los costes de envío.</div></details>
+        <h4 class="faq-categoria">Sobre Envíos</h4>
+        <details class="faq-item"><summary>Enviáis a toda España?</summary><div class="faq-resposta">Sí, realizamos envíos a toda la España peninsular. Para Baleares, Canarias, Ceuta y Melilla, consulta disponibilidad y coste por WhatsApp.</div></details>
+        <details class="faq-item"><summary>Cuánto tarda en llegar mi pedido?</summary><div class="faq-resposta">Preparamos tu pedido en 24-48h hábiles tras la confirmación del pago. Una vez sale del obrador, el plazo de entrega es de 24-48h adicionales según la zona. Recibirás un código de seguimiento por email o WhatsApp.</div></details>
+        <details class="faq-item"><summary>Cómo se mantiene la cadena de frío durante el envío?</summary><div class="faq-resposta">Enviamos todos los pedidos en envase isotérmico con frío (gel refrigerante o hielo seco según la temperatura exterior). El producto viaja envasado al vacío dentro del envase isotérmico para mantener la temperatura adecuada durante todo el transporte.</div></details>
+        <details class="faq-item"><summary>Qué pasa si no estoy en casa cuando llega el repartidor?</summary><div class="faq-resposta">El servicio de mensajería intentará la entrega y te dejará un aviso. Puedes reprogramar la entrega o recogerlo en el punto más cercano. Te recomendamos indicar una dirección donde haya alguien disponible para recibir, ya que se trata de producto fresco refrigerado.</div></details>
+        <h4 class="faq-categoria">Sobre Conservación</h4>
+        <details class="faq-item"><summary>Cómo debo conservar los productos al recibirlos?</summary><div class="faq-resposta">Introduce los productos en el frigorífico inmediatamente al recibirlos. Mantenlos refrigerados entre 0 y 4 grados C. Si no vas a consumirlos en los próximos 3-5 días, puedes congelarlos directamente en su envase al vacío.</div></details>
+        <details class="faq-item"><summary>Puedo congelar las hamburguesas?</summary><div class="faq-resposta">Sí. Todas nuestras hamburguesas se pueden congelar sin perder calidad. Congélalas en su envase al vacío original. Al descongelar, hazlo siempre en el frigorífico (nunca a temperatura ambiente ni en el microondas). Una vez descongeladas, consúmelas en las siguientes 24 horas y no vuelvas a congelarlas.</div></details>
+        <details class="faq-item"><summary>Cuánto duran las hamburguesas en el frigorífico?</summary><div class="faq-resposta">Refrigeradas entre 0 y 4 grados C, nuestras hamburguesas se conservan en óptimas condiciones durante 3 a 5 días. Las de pollo recomendamos consumirlas en 2 a 3 días. Siempre consulta la fecha de consumo preferente indicada en el envase.</div></details>
+        <h4 class="faq-categoria">Sobre Devoluciones y Garantía</h4>
+        <details class="faq-item"><summary>Qué hago si mi pedido llega en mal estado?</summary><div class="faq-resposta">Mándanos una foto por WhatsApp mostrando el estado del producto y del envase. Lo gestionamos de forma inmediata: te reponemos el producto o te devolvemos el importe. Sin preguntas, sin complicaciones. Nuestra prioridad es que estés satisfecho.</div></details>
+        <details class="faq-item"><summary>Puedo devolver un producto si no me gusta?</summary><div class="faq-resposta">Al tratarse de productos alimentarios frescos y perecederos, no aceptamos devoluciones por preferencia de sabor. Sin embargo, si el producto tiene algún defecto de elaboración, daño en el envío o incidencia de calidad, lo reponemos o devolvemos el importe sin problema.</div></details>
+        <details class="faq-item"><summary>Hacéis reembolsos?</summary><div class="faq-resposta">Sí. En caso de que tu pedido llegue en mal estado o con incidencias que afecten a la calidad, realizamos el reembolso completo del importe afectado. El reembolso se procesa en el mismo método de pago utilizado en la compra en un plazo de 5 a 10 días hábiles.</div></details>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Sección 5</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">No encuentras tu respuesta?</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Escríbenos por WhatsApp o por correo y resolvemos tu duda al momento.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Escribir por WhatsApp >>></span><span class="cta-text secondary">sm.cesarmartinez@gmail.com</span></div>
+    </div>
+</div>
+
+<!-- NOTAS GENERALES ES -->
+<div class="page" id="notas-es">
+    <div class="page-title"><h2>Notas Generales para el Diseñador / Desarrollador</h2></div>
+    <div class="secao">
+        <h3>Tono Visual Recomendado</h3>
+        <div class="copy-block"><p class="copy-text"><strong>Colores:</strong> Verde oscuro asturiano (verde bosque), negro, blanco roto/crema y un tono de acento cálido (rojo oscuro, terracota o dorado). La paleta debe transmitir: artesanal, natural, premium sin ser elitista, cercano.</p><p class="copy-text" style="margin-top:12px"><strong>Tipografía:</strong> Combinación serif (para headlines, transmite tradición) + sans-serif (para cuerpo, transmite modernidad). Sugerencias: Playfair Display o DM Serif Display para títulos + Inter o Work Sans para cuerpo.</p><p class="copy-text" style="margin-top:12px"><strong>Imágenes:</strong> Fotos reales de los productos, del obrador, del ganado y del campo de Carnicas Dani tienen prioridad absoluta. Deben ser cálidas, con luz natural, estilo "food photography artesanal". Si no están disponibles, usar banco de imágenes con temática de carnicería artesanal, parrillada y campo. Evitar imágenes de supermercado o industria.</p><p class="copy-text" style="margin-top:12px"><strong>Iconos:</strong> Trazo grueso, estilo artesanal/handmade. Sugerencias: Phosphor Icons (bold), iconos custom dibujados. Nada demasiado corporativo.</p><p class="copy-text" style="margin-top:12px"><strong>Layout:</strong> Cálido y generoso en espaciado. Secciones amplias. Fotos grandes. Mucho blanco roto / crema entre secciones. Texturas sutiles de madera, papel craft o lino en fondos puede funcionar muy bien para reforzar lo artesanal.</p></div>
+    </div>
+    <div class="secao">
+        <h3>Elementos Recurrentes en Todas las Páginas</h3>
+        <div class="copy-block"><p class="copy-text"><ul><li><strong>Botón WhatsApp flotante:</strong> Fijo en la esquina inferior derecha en TODAS las páginas --- es el canal principal de contacto y pedidos</li><li><strong>Header:</strong> Logo Carnicas Dani + menú de navegación + icono de carrito (con contador de items) + botón "Pedir" o WhatsApp en la esquina superior derecha</li><li><strong>Barra de anuncio (top bar):</strong> Faja superior con texto tipo "Envío en frío a toda España | Precio exclusivo web | Ganadería propia" --- se repite en todas las páginas</li><li><strong>Rodapé:</strong> Conforme descrito en la Página 1, Sección 12 --- patrón para todas las páginas</li><li><strong>Sellos de confianza:</strong> Considerar incluir sellos de pago seguro, garantía de frío, envío asegurado en posiciones estratégicas (carrito, checkout, páginas de producto)</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <h3>SEO - Términos Estratégicos para Uso en las Páginas</h3>
+        <div class="copy-block"><p class="copy-text"><ul><li>carnicería artesanal online</li><li>carnicería asturiana online</li><li>comprar carne online españa</li><li>hamburguesas artesanales a domicilio</li><li>hamburguesas de ternera asturiana</li><li>carne de ganadería propia</li><li>pack parrillada a domicilio</li><li>kit barbacoa online</li><li>carne fresca a domicilio españa</li><li>embutidos artesanales asturianos</li><li>cachopa asturiana</li><li>envío carne en frío</li><li>carnicería con ganadería propia</li><li>comprar hamburguesas gourmet online</li><li>carne de pasto extensivo</li><li>hamburguesa cachopa</li><li>hamburguesa artesanal online</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <h3>Datos a Confirmar con el Cliente</h3>
+        <div class="copy-block"><p class="copy-text"><ul><li>Número de WhatsApp para los CTAs</li><li>Número de teléfono de atención</li><li>Precios exactos de los Packs (Degustación, Top, Fiesta)</li><li>Contenido exacto de cada Pack (qué productos incluyen)</li><li>Coste de envío (fijo, variable, gratis a partir de X euros)</li><li>Métodos de pago aceptados (tarjeta, Bizum, transferencia, otros)</li><li>Fotos reales de productos, obrador, campo y ganado</li><li>Logo e identidad visual de Carnicas Dani (paleta de colores, tipografía, manual de marca si existe)</li><li>Testimonios reales de clientes (sustituir los ficticios)</li><li>Horario de atención al cliente</li><li>Datos fiscales para el aviso legal (CIF, razón social, dirección fiscal)</li><li>Política de privacidad y condiciones de compra (texto legal)</li><li>Zona de envío a Baleares/Canarias: disponible o no? Coste adicional?</li><li>Envío gratuito: hay importe mínimo? Cuál?</li><li>Plazo máximo de preparación y envío (para comprometerse en la web)</li><li>Categorías adicionales de productos (carne fresca, embutidos) --- fichas de producto necesarias?</li><li>Productos asturianos específicos: cachopa lista, fabada, sidra y bacon --- se venden online?</li></ul></p></div>
+    </div>
+</div>
+
+</div><!-- FIN ESPANOL -->
+
+
+<!-- ================================================================== -->
+<!-- ======================== PORTUGUES (BR) =========================== -->
+<!-- ================================================================== -->
+<div class="lang-content" data-lang="pt">
+
+<!-- PAGINA 1 - INICIO -->
+<div class="page" id="p1-pt">
+    <div class="page-title"><h2>Página 1 - Inicio (Home)</h2></div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 1</p>
+        <h3>Hero / Banner Principal</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Carne de verdade. Dos nossos pastos para a sua churrasqueira.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Somos a Carnicas Dani, açougue artesanal asturiano com pecuária própria. Elaboramos hambúrgueres, embutidos e preparados para churrasco com ingredientes de primeira qualidade, das Asturias para toda a Espanha. Aqui você sabe de onde vem o que come --- e se nota em cada mordida.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Explorar a Loja >>></span><span class="cta-text secondary">Ver Kits de Churrasco >>></span></div>
+        <div class="nota-visual">Imagem hero em tela cheia mostrando um churrasco em acao com carnes suculentas e brasas vivas, ou uma composição de produtos Carnicas Dani sobre tabua de madeira rústica. Overlay escuro sutil para contraste. Tipografía bold, estilo rústico-premium. Os CTAs devem ser botoes grandes e contrastantes --- o principal na cor da marca, o secundario em outline. Considerar video curto de fundo (loop de churrasqueira fumando) se a performance permitir.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 2</p>
+        <h3>Barra de Credibilidade</h3>
+        <div class="copy-block"><span class="label corpo">Texto corrido (faixa horizontal)</span><p class="copy-text">Pecuária Propria nas Asturias | Elaboração 100% Artesanal | Envíos para Toda a Espanha | Preço Exclusivo Web | +10 Variedades de Hamburguer</p></div>
+        <div class="nota-visual">Faixa horizontal com fundo escuro (preto, grafite ou verde asturiano). Icones representando cada item (vaca/pasto, mãos artesanais, caminhao/mapa, etiqueta preço, hamburguer). Texto branco ou creme. Funciona como barra de confiança logo abaixo do hero. Scroll horizontal no mobile se necessário.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 3</p>
+        <h3>O Problema</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Você está cansado de comprar carne sem saber de onde vem?</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">No supermercado, a carne chega embalada em plástico, sem história, sem origem, sem alma. Você não sabe qué animal era, nem como foi criado, nem o que adicionaram. Abre a bandeja, cozinha... e algo falta. Falta sabor. Falta confiança. Falta aquela textura suculenta que só tem a carne de verdade.</p><p class="copy-text" style="margin-top:12px">E quando você quer fazer um churrasco decente --- com amigos, com a família, para comemorar algo --- se depara com o de sempre: produtos genéricos, quantidades que não batem e a sensação de que poderia ter sido melhor.</p></div>
+        <div class="destaque-block">Se alguma vez você pensou "isso não tem gosto de nada" diante de uma churrasqueira... o problema não era você. Era a carne.</div>
+        <div class="nota-visual">Fundo claro, tipografía grande e limpa. O bloco destacado pode ir em formato citacao com fundo de cor suave (bege, creme) e borda lateral na cor da marca. Icones discretos: bandeja de supermercado, sinal de interrogação, rosto decepcionado. Layout centralizado, uma coluna.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 4</p>
+        <h3>A Solução Carnicas Dani</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Carne com nome, sobrenome e pasto próprio</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">A Carnicas Dani nasce de uma família pecuarista asturiana que cria seu próprio gado, elabora seus produtos a mão e os envia diretamente para você. Sem intermediários. Sem surpresas. Só produto autêntico.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Pilar 1 - Pecuária Propria</h4><p>Nosso gado pasta livremente nos campos das Asturias. Sabemos exatamente o qué come, cómo e criado e quando esta no ponto. Essa é a diferença que se prova.</p></div>
+            <div class="pilar"><h4>Pilar 2 - Elaboração Artesanal</h4><p>Cada hamburguer, cada embutido, cada preparado é elaborado a mão no nosso obrador. Receitas próprias, ingredientes de primeira, sem atalhos industriais. Como sempre foi feito.</p></div>
+            <div class="pilar"><h4>Pilar 3 - Direto na Sua Casa</h4><p>Faça seu pedido no site, preparamos tudo fresco e enviamos refrigerado para qualquer ponto da Espanha. Preço exclusivo online, mais económico que na loja física.</p></div>
+        </div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ver Todos os Produtos >>></span></div>
+        <div class="nota-visual">Layout em 3 colunas com icone ou ilustracao no topo de cada pilar (vaca no pasto, mãos amassando, caixa de envio). Fundo branco com detalhes na cor da marca. Estilo limpo porem acolhedor. CTA centralizado abaixo dos pilares. Icones com traco grosso, estilo artesanal.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 5</p>
+        <h3>Categorías de Produtos em Destaque</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">O que você quer hoje?</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Explore nossas categorías e encontre exatamente o que precisa para seu próximo churrasco, refeição em família ou capricho no meio da semana.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Hamburgueres Artesanais</h4><p>+10 variedades elaboradas a mão com carne de pecuária própria. Da classica de novilha asturiana até a explosiva com kiku de carne e cebola crocante. Todas únicas, todas nossas.</p><br><span class="cta-text">Ver Hamburgueres >>></span></div>
+            <div class="pilar"><h4>Kits de Churrasco</h4><p>Packs completos de 4 a 12 pessoas com as melhores carnes e preparados para grelhar. Você escolhe o tamanho, nós colocamos a qualidade. Prontos para a brasa.</p><br><span class="cta-text">Ver Kits >>></span></div>
+            <div class="pilar"><h4>Embutidos e Elaborados</h4><p>Chourico, morcela, picadillo e embutidos artesanais com o selo das Asturias. Produtos de obrador, elaborados com receitas tradiciónais e materia-prima de primeira.</p><br><span class="cta-text">Ver Embutidos >>></span></div>
+            <div class="pilar"><h4>Carne Fresca</h4><p>Novilha asturiana, porco e frango de primeira qualidade. Cortes selecionados, preparados na hora e enviados refrigerados para chegar como recem-cortados.</p><br><span class="cta-text">Ver Carne Fresca >>></span></div>
+        </div>
+        <div class="nota-visual">4 cards grandes com imagem de cada categoria como fundo. Overlay escuro com titulo e CTA sobrepostos. Efeito hover: zoom sutil na imagem. Layout em grid 2x2 no desktop, coluna única no mobile. Estilo visual tipo e-commerce premium de alimentação.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 6</p>
+        <h3>Kits em Destaque</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Churrasco perfeito. Sem complicações.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Não calcule quantidades, não procure em tres lugares. Escolha seu pack, adicione ao carrinho e aproveite. Nos cuidamos para que tudo seja de primeira.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Pack Degustação (~1,2 kg)</h4><p>Para 2-3 pessoas. O pack perfeito para experimentar o melhor da Carnicas Dani sem compromisso. Uma seleção dos nossos hamburgueres mais populares e um embutido artesanal.</p><br><span class="cta-text">Adicionar ao Carrinho >>></span></div>
+            <div class="pilar"><h4>Pack Top (~4 kg)</h4><p>Para 4-6 pessoas. O favorito dos nossos clientes. Variedade de hamburgueres artesanais, carne para churrasco e embutido asturiano. Tudo que você precisa para um churrasco memoravel.</p><br><span class="cta-text">Adicionar ao Carrinho >>></span></div>
+            <div class="pilar"><h4>Pack Festa (~7-12 kg)</h4><p>Para 8-12 pessoas. O churrasquinho grande. Sortimento completo de carnes, hamburgueres, embutidos e preparados para não faltar nada. Ideal para reuniões familiares, comemorações ou aquele churrasco de fim de semana com os amigos.</p><br><span class="cta-text">Adicionar ao Carrinho >>></span></div>
+            <div class="pilar"><h4>Pack Personalizado</h4><p>Você decide. Escreva pelo WhatsApp o que quer, em que quantidade e para quantas pessoas. Nos preparamos sob medida, com o mesmo cuidado artesanal de sempre.</p><br><span class="cta-text">Pedir pelo WhatsApp >>></span></div>
+        </div>
+        <div class="nota-visual">4 cards em linha horizontal (scroll no mobile). Cada card com foto do pack, nome, descrição breve, peso apróximado e botão CTA. O Pack Personalizado pode ter design diferenciado (borda tracejada, icone WhatsApp). Etiqueta "Mais vendido" no Pack Top. Fundo claro, cards com sombra sutil.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 7</p>
+        <h3>Por Que Comprar na Carnicas Dani</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">O que nos torna diferentes</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Não somos um supermercado. Não somos uma indústria. Somos um açougue de verdade com pecuária própria que elabora tudo a mão.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Pecuária Propria</h4><p>Nosso gado é criado em pastos extensivos das Asturias. Controlamos toda a cadeia: do pasto ao obrador, do obrador a sua casa. Rastreabilidade total.</p></div>
+            <div class="pilar"><h4>Elaboração Artesanal</h4><p>Cada produto é elaborado no nosso obrador, a mão, com receitas próprias. Sem conservantes artificiais, sem enchimentos baratos. Ingredientes de verdade.</p></div>
+            <div class="pilar"><h4>Preço Exclusivo Web</h4><p>Na nossa loja online os preços são mais económicos que na loja física. Comprando aqui, você leva a mesma qualidade por um preço melhor.</p></div>
+            <div class="pilar"><h4>Envio Refrigerado para Toda a Espanha</h4><p>Preparamos seu pedido fresco e enviamos em embalagem isotérmica com frío garantido. Chega na sua porta como se você saisse do nosso açougue.</p></div>
+            <div class="pilar"><h4>Garantía Total</h4><p>Se seu pedido chegar em mau estado, repomos ou devolvemos o dinheiro. Sem perguntas. Simples assim.</p></div>
+            <div class="pilar"><h4>Atendimento Próximo</h4><p>Pode nos escrever pelo WhatsApp como se falasse com seu açougueiro de toda a vida. Assessoramos, recomendamos e preparamos o que você precisar.</p></div>
+        </div>
+        <div class="nota-visual">Layout em grid 3x2 ou lista vertical com icone a esquerda de cada diferencial. Icones: vaca, mãos, etiqueta euro, caixa frío, escudo garantía, telefone. Fundo alternado (branco/creme) por linha. Estilo limpo e fácil de escanear.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 8</p>
+        <h3>Depoimentos / Prova Social</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">O que dizem quem já experimentou</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Não somos nós que dizemos. São os que repetem.</p></div>
+        <div class="pilares">
+            <div class="pilar"><p>"Pedi o Pack Top para um churrasco com amigos e foi um sucesso. Os hamburgueres não tem nada a ver com os do supermercado. Suculentos, com sabor de verdade. Já repeti tres vezes."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Carlos M., Madrid</p></div>
+            <div class="pilar"><p>"Sou asturiana morando em Barcelona e sentia falta da qualidade de um açougue de vilarejo. Com a Carnicas Dani é como voltar para casa. O chourico e o hamburguer asturiano são outra coisa."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Laura G., Barcelona</p></div>
+            <div class="pilar"><p>"No inicio tinha receio de comprar carne online, mas chegou perfeita: refrigerada, bem embalada e no prazo que me disseram. A qualidade é brutal. Não compro hamburgueres em outro lugar."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Miguel A., Valencia</p></div>
+            <div class="pilar"><p>"Os hamburgueres cachopa são uma loucura. Minha família me pede todo fim de semana. E o atendimento pelo WhatsApp é como falar com o açougueiro do bairro, mas sem fazer fila."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- Ana R., Bilbao</p></div>
+            <div class="pilar"><p>"Fiz um pedido personalizado para um aniversario com 15 pessoas. Me assessoraram pelo WhatsApp, calcularam as quantidades e chegou tudo perfeito. Servico impecavel."</p><p style="margin-top:10px;font-weight:600;color:#2d5a3f">--- David L., Sevilla</p></div>
+        </div>
+        <div class="nota-visual">Cards de depoimento com aspas grandes estilizadas. Foto de avatar genérico ou iniciais do cliente. Estrelas de avaliação (5/5) acima do texto. Carrossel horizontal com setas no desktop, scroll no mobile. IMPORTANTE: Estes depoimentos são ficticios para referencia. Substituir por depoimentos reais de clientes.</div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 9</p>
+        <h3>CTA Intermediario</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Seu próximo churrasco merece carne de verdade</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Explore a loja, escolha seus favoritos e receba em casa em 24-48h. Ou se preferir, nos escreva pelo WhatsApp e montamos um pack sob medida.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir para a Loja >>></span><span class="cta-text secondary">Pedir pelo WhatsApp >>></span></div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 10</p>
+        <h3>Seção Localista / Orgulho Asturiano</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Feito nas Asturias. Com orgulho.</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Asturias não e só paisagem. E tradição pecuária, e obrador, e sidra, e cachopa, e sentar ao redor de uma mesa e compartilhar o melhor. A Carnicas Dani nasce dessa terra e dessa cultura.</p><p class="copy-text" style="margin-top:12px">Nossos produtos levam o selo da gastronomía asturiana: a cachopa feita hamburguer, o picadillo com queijo azul, a fabada que te transporta. Sabores que contam de onde vem.</p><p class="copy-text" style="margin-top:12px">Esteja em Madrid, em Barcelona, em Sevilla ou em qualquer canto da Espanha, agora você pode ter um pedaco das Asturias na sua mesa.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Descobrir Produtos Asturianos >>></span></div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 11</p>
+        <h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Dos nossos pastos para a sua churrasqueira. Faça seu pedido.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Escolha seus produtos, adicione ao carrinho e receba em casa com toda a frescura e o sabor de um açougue artesanal asturiano. Envio refrigerado para toda a Espanha.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Comprar Agora >>></span><span class="cta-text secondary">Falar pelo WhatsApp >>></span></div>
+        <div class="copy-block"><span class="label corpo">Informações complementares</span><p class="copy-text">sm.cesarmartinez@gmail.com<br>@carnicasdani<br>WhatsApp: [número]</p></div>
+    </div>
+
+    <div class="secao">
+        <p class="secao-label">Seção 12</p>
+        <h3>Rodapé</h3>
+        <div class="copy-block"><span class="label corpo">Conteudo</span><p class="copy-text"><strong>Carnicas Dani</strong><br>Açougue artesanal com pecuária própria | Asturias, Espanha</p></div>
+        <div class="copy-block"><span class="label corpo">Links rápidos</span><p class="copy-text">Inicio | Quem Somos | Loja | Kits e Ofertas | Nossas Carnes | Pedidos e Contato | Envíos e FAQ</p></div>
+        <div class="copy-block"><span class="label corpo">Contato</span><p class="copy-text">sm.cesarmartinez@gmail.com<br>WhatsApp: [número]</p></div>
+        <div class="copy-block"><span class="label corpo">Redes Sociais</span><p class="copy-text">Instagram: @carnicasdani</p></div>
+        <div class="copy-block"><span class="label corpo">Informação legal</span><p class="copy-text">Política de Privacidade | Aviso Legal | Política de Cookies | Condições de Compra</p><p class="copy-text" style="margin-top:8px">Copyright 2026 Carnicas Dani. Todos os direitos reservados.</p></div>
+    </div>
+</div>
+
+<!-- PAGINAS 2-7 PT-BR -->
+
+<!-- PAGINA 2 PT -->
+<div class="page" id="p2-pt">
+    <div class="page-title"><h2>Página 2 - Quem Somos / Pecuária Propria</h2></div>
+    <div class="secao">
+        <p class="secao-label">Seção 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Por tras de cada produto há uma família, um pasto e um jeito de fazer as coisas</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Conheça a história da Carnicas Dani: de onde viemos, como trabalhamos e por que nossa carne tem um sabor diferente.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 2</p><h3>Nossa História</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Um açougue com raizes no campo</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">A Carnicas Dani não começou em um escritorio nem em um galpao indústrial. Comecou nos campos das Asturias, com gado próprio e com as mãos na massa --- literalmente.</p><p class="copy-text" style="margin-top:12px">Somos uma família pecuarista e açougueira. Criamos nosso próprio gado em pastos extensivos asturianos, e desde nosso obrador na regiao de Oviedo e Pola de Laviana elaboramos tudo o que vendemos: hamburgueres, embutidos, preparados para churrasco e produtos típicos asturianos.</p><p class="copy-text" style="margin-top:12px">O que começou como um açougue de bairro cresceu gracas a confiança dos nossos clientes. Gente que entrava, provava e voltava. Gente que nós recomendava aos amigos. Gente que nós dizia: "ei, vocês não enviam fora das Asturias?"</p><p class="copy-text" style="margin-top:12px">Assim nasceu nossa loja online: para que qualquer pessoa na Espanha possa desfrutar da qualidade de um açougue artesanal asturiano, com pecuária própria, sem sair de casa.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 3</p><h3>Pecuária Propria</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pecuária própria: do pasto ao obrador</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Este é o nosso maior diferencial. E poucos podem dizer isso.</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Nosso gado não vem de um atacadista, de um leilao nem de um galpao de engorda intensiva. Nasce e e criado nos nossos próprios pastos nas Asturias. Isso significa que controlamos toda a cadeia:</p></div>
+        <div class="pilares" style="grid-template-columns:1fr 1fr">
+            <div class="pilar"><h4>Passo 1 - Criação em Pasto Extensivo</h4><p>Nossos animais pastam livremente nos campos asturianos, alimentando-se de forma natural. Sem pressa, sem estresse, sem atalhos. O resultado é uma carne com sabor, textura e maciez que não se conseguem de outra forma.</p></div>
+            <div class="pilar"><h4>Passo 2 - Selecao e Abate</h4><p>Selecionamos cuidadosamente cada animal no seu ponto otimo. Trabalhamos com abatedouros de confiança que compartilham nossos padroes de bem-estar animal e qualidade.</p></div>
+            <div class="pilar"><h4>Passo 3 - Elaboração no Obrador Proprio</h4><p>A carne chega ao nosso obrador e ali a transformamos: cortamos, moemos, temperamos, misturamos e elaboramos cada produto a mão. Hamburgueres, embutidos, preparados --- tudo sai daqui.</p></div>
+            <div class="pilar"><h4>Passo 4 - Das Nossas Mãos para Sua Casa</h4><p>Embalamos a frío, empacotamos com cuidado e enviamos para que chegue a sua porta com toda a frescura. Como se você saisse do nosso açougue.</p></div>
+        </div>
+        <div class="destaque-block">Pecuária própria = rastreabilidade total. Sabemos a história de cada peça que chega até você. E isso e algo que um supermercado não pode oferecer.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 4</p><h3>Nossos Valores</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">No que acreditamos</p></div>
+        <div class="pilares" style="grid-template-columns:1fr 1fr">
+            <div class="pilar"><h4>Produto Auténtico</h4><p>Não buscamos produzir mais, buscamos produzir melhor. Cada produto leva ingredientes de primeira qualidade, sem enchimentos, sem conservantes artificiais, sem atalhos. O que você ve e o que come.</p></div>
+            <div class="pilar"><h4>Atendimento Próximo</h4><p>Somos um açougue, não uma multinacional. Respondemos pelo WhatsApp, assessoramos, te conhecemos pelo nome. Queremos que comprar online se sinta como entrar na nossa loja.</p></div>
+            <div class="pilar"><h4>Tradição com Evolução</h4><p>Respeitamos as receitas de sempre, mas não ficamos parados. Inovamos com novos sabores, combinações e formatos. O hamburguer Explosivo ou o Cachopa nasceram assim: da tradição asturiana com uma virada criativa.</p></div>
+            <div class="pilar"><h4>Transparencia Total</h4><p>Publicamos ingredientes, pesos, origens e preços sem letras miudas. Se algo não chegar bem, repomos ou devolvemos o dinheiro. Sem perguntas. Ponto.</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 5</p><h3>O Obrador</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nosso obrador: onde tudo ganha vida</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">O obrador é a alma da Carnicas Dani. E onde a carne se transforma em produto. Onde as receitas ganham forma. Onde cada hamburguer é moldado a mão, cada chourico é embutido com paciência e cada preparado para churrasco é temperado com a precisão de quem faz isso há anos.</p><p class="copy-text" style="margin-top:12px">Não usamos máquinas automáticas que produzem centenas de unidades por hora. Aqui o ritmo é ditado pela qualidade. Cada lote e pequeno, controlado e cuidado.</p></div>
+        <div class="copy-block"><span class="label corpo">Destaques</span><p class="copy-text"><ul><li>Elaboração manual com receitas próprias</li><li>Ingredientes frescos e de primeira qualidade</li><li>Lotes pequenos e controlados</li><li>Condições sanitarias certificadas</li><li>Produção sob pedido para máxima frescura</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 6</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Agora que nos conhece, prove o que fazemos</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Entre na loja, escolha seus produtos favoritos e descubra por que nossos clientes repetem. Envio refrigerado para toda a Espanha.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir para a Loja >>></span><span class="cta-text secondary">Ver Kits de Churrasco >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 3 PT - LOJA -->
+<div class="page" id="p3-pt">
+    <div class="page-title"><h2>Página 3 - Loja</h2></div>
+    <div class="secao">
+        <p class="secao-label">Seção 1</p><h3>Hero / Cabeçalho</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">A loja da Carnicas Dani</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Hamburgueres artesanais, carne fresca, embutidos e kits de churrasco. Tudo elaborado a mão com carne de pecuária própria nas Asturias. Preço exclusivo web. Envio refrigerado para toda a Espanha.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 2</p><h3>Filtros e Categorías</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Explore por categoria</p></div>
+        <div class="copy-block"><span class="label corpo">Categorías</span><p class="copy-text"><strong>Todas</strong> | <strong>Hamburgueres Artesanais</strong> | <strong>Kits de Churrasco</strong> | <strong>Embutidos e Elaborados</strong> | <strong>Carne Fresca</strong> | <strong>Produtos Asturianos</strong></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 3</p><h3>Produtos - Hamburgueres Artesanais</h3>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">+10 variedades únicas, elaboradas a mão no nosso obrador com carne de pecuária própria. Cada uma tem seu carater. Todas tem nosso selo.</p></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer Misto de Novilha e Porco</h4><span class="produto-preco">2,10 EUR / ud (200g)</span></div><p class="produto-tagline">O classico que nunca falha.</p><p class="copy-text">Mistura equilibrada de novilha e porco de pecuária própria. Suculento, macio e versatil. O ponto de partida perfeito para qualquer churrasco.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>O hamburguer mais versatil do nosso cardapio. Elaborado com uma mistura equilibrada de novilha e porco da nossa pecuária própria nas Asturias, tem o melhor das duas carnes: a estrutura e sabor da novilha, a suculencia e maciez do porco.</p><p style="margin-top:8px">Não leva enchimentos nem conservantes artificiais. So carne de qualidade, temperada com nosso toque artesanal. O resultado e um hamburguer suculento, de textura firme porem macia, que funciona igualmente bem na grelha, na chapa ou na frigideira.</p><p style="margin-top:8px">E nossa opção mais popular entre quem pede pela primeira vez --- e a que sempre volta ao carrinho.</p></div></details><div class="produto-meta"><span>Churrasco, chapa, frigideira</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer de Novilha Asturiana</h4><span class="produto-preco">2,50 EUR / ud (200g)</span></div><p class="produto-tagline">Novilha asturiana em estado puro.</p><p class="copy-text">100% novilha asturiana dos nossos pastos. Natural, saborosa e com um sabor que fala por si so. A escolha classica para quem quer carne de verdade.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>Para os puristas da carne, este e o hamburguer. Cem por cento novilha asturiana da nossa pecuária própria, sem misturas, sem aditivos. So carne de primeira criada em pasto extensivo, com o sabor limpo e profundo que só a novilha de verdade proporciona.</p><p style="margin-top:8px">A textura e firme, a mordida e suculenta e o sabor e o de sempre: o da carne bem criada, de uma raca que cresceu comendo capim nos campos das Asturias.</p><p style="margin-top:8px">Não precisa muito mais que umas brasas, um bom pao e vontade de aproveitar.</p></div></details><div class="produto-meta"><span>Grelha, chapa, churrasco</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer de Frango</h4><span class="produto-preco">2,30 EUR / ud (200g)</span></div><p class="produto-tagline">Leve, fresco e cheio de sabor.</p><p class="copy-text">Elaborado com frango de primeira qualidade. Suave, suculento e perfeito para quem busca uma opção mais leve sem abrir mao do sabor artesanal.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>Nem todos os hamburgueres precisam ser pesados. Nosso hamburguer de frango é a prova de que da para ser leve e saboroso ao mesmo tempo.</p><p style="margin-top:8px">Elaborado com frango de primeira qualidade, tem uma textura suave e suculenta que funciona perfeitamente na grelha ou na chapa. E a opção favorita de quem cuida da alimentação, das criancas da casa e de quem simplesmente quer variar sem perder qualidade.</p><p style="margin-top:8px">Artesanal como todos os nossos. Sem enchimentos, sem truques. So bom frango, bem trabalhado.</p></div></details><div class="produto-meta"><span>Alimentacao leve, criancas</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 2-3 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer de Porco com Jalapenos</h4><span class="produto-preco">2,50 EUR / ud (200g)</span></div><p class="produto-tagline">Para quem gosta com personalidade.</p><p class="copy-text">Lombo de porco fresco com jalapeños naturais. Um sabor intenso com um toque picante que vicia. Pensado para os mais ousados do churrasco.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>Se você busca algo que quebre a rotina, aqui esta. Nosso hamburguer de porco com jalapeños combina a suculencia do lombo de porco fresco com o toque picante e fresco de jalapeños naturais.</p><p style="margin-top:8px">Não e um picante que queima: e um ponto justo que desperta o paladar e da personalidade a cada mordida.</p><p style="margin-top:8px">Elaborado a mão no nosso obrador, como todos os nossos hamburgueres. Ingredientes reais, sabor real.</p></div></details><div class="produto-meta"><span>Churrasco com amigos, sabores intensos</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer de Lombo de Porco, Piquillo e Bacon</h4><span class="produto-preco">2,80 EUR / ud (200g)</span></div><p class="produto-tagline">Uma proposta gourmet em cada mordida.</p><p class="copy-text">Porco suculento, pimentoes piquillo e bacon defumado. Nuances únicas que conquistam. Uma combinacao que eleva o nivel de qualquer churrasco.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>Este hamburguer não e o típico. E uma proposta gourmet pensada para quem aprecia as nuances.</p><p style="margin-top:8px">O lombo de porco aporta suculencia e base carnosa. Os pimentoes piquillo trazem um dulcor sutil e um aroma inconfundivel. E o bacon defumado arremata com aquele ponto crocante e salgado que arredonda tudo.</p><p style="margin-top:8px">O resultado e um hamburguer com camadas de sabor: primeiro o porco, depois o piquillo, por fim o defumado do bacon. Cada mordida conta uma história.</p></div></details><div class="produto-meta"><span>Churrasco gourmet, jantares especiais</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card" style="border-color:#d4a853;border-width:2px"><div class="produto-header"><h4>Hamburguer Asturiano</h4><span class="produto-preco">3,70 EUR / ud (200g)</span></div><p class="produto-tagline">O sabor das Asturias em um hamburguer.</p><p class="copy-text">Picadillo asturiano misturado com um toque cremoso de queijo azul. Um sabor autêntico e profundo que une tradição e gourmet. Único na sua espécie.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>Se tivessemos que escolher um único hamburguer para explicar quem somos, seria este.</p><p style="margin-top:8px">O Hamburguer Asturiano é elaborado com picadillo --- a preparacao de carne mais emblematica da gastronomía asturiana --- misturado com queijo azul das Asturias, que aporta um toque cremoso, intenso e absolutamente inconfundivel.</p><p style="margin-top:8px">E tradição pura com um acabamento gourmet. O picadillo traz o sabor de sempre, o queijo azul eleva a outro nivel.</p><p style="margin-top:8px">Não e um hamburguer qualquer. E o nosso hamburguer. O que representa o que a Carnicas Dani significa.</p></div></details><div class="produto-meta"><span>Amantes das Asturias</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card" style="border-color:#d4a853;border-width:2px"><div class="produto-header"><h4>Hamburguer Explosivo</h4><span class="produto-preco">5,80 EUR / ud (200g)</span></div><p class="produto-tagline">Nosso hamburguer mais premium. E se nota.</p><p class="copy-text">Novilha asturiana de pecuária própria com kiku de carne fundo e cebola crocante. Intenso, cremoso e com um contraste brutal. Para quem quer o melhor.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>O Explosivo não e um hamburguer. E uma declaracao de intencoes.</p><p style="margin-top:8px">Elaborado com novilha asturiana da nossa pecuária própria, leva kiku de carne fundo --- um concentrado de sabor umami que da uma profundidade impressionante --- e cebola crocante que aporta contraste de textura em cada mordida.</p><p style="margin-top:8px">O resultado e um hamburguer intenso, cremoso, com uma complexidade de sabor que te faz fechar os olhos e pensar: "isso e outra coisa".</p><p style="margin-top:8px">E nosso hamburguer mais premium. O mais arrojado. E o que mais vicia. Se busca a experiência definitiva de hamburguer artesanal, e este.</p></div></details><div class="produto-meta"><span>PREMIUM</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer Cachopa</h4><span class="produto-preco">4,70 EUR / ud (~300g)</span></div><p class="produto-tagline">A cachopa asturiana feita hamburguer.</p><p class="copy-text">Novilha suculenta, presunto serrano, queijo gouda derretido e pimentoes piquillo. Mistura intensa e cremosa com o selo asturiano que a torna única.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>A cachopa é o prato mais emblematico das Asturias. E nós a transformamos em hamburguer.</p><p style="margin-top:8px">Carne de novilha suculenta como base, presunto serrano que aporta profundidade e aquele ponto salgado, queijo gouda que derrete no centro criando uma cremosidade irresistivel, e pimentoes piquillo que arrematam com dulcor e cor.</p><p style="margin-top:8px">E maior que nossos hamburgueres padrão (aprox. 300g) porque uma cachopa não se faz pela metade.</p><p style="margin-top:8px">Para os asturianos, é nostalgia feita hamburguer. Para quem ainda não provou uma cachopa, é a melhor introducao possivel.</p></div></details><div class="produto-meta"><span>Especialidade Asturiana</span><span>~300g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer de Frango com Espinafre</h4><span class="produto-preco">3,00 EUR / ud (200g)</span></div><p class="produto-tagline">Leve, fresco e com um toque verde.</p><p class="copy-text">Peito de frango, espinafre, alho, salsinha e pimenta preta. Suave, suculento e com um toque fresco. O burger mais leve sem perder um grama de sabor.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>Nem sempre é questão de peso. As vezes você quer algo mais fresco, mais leve, mas que continue sendo um hamburguer de verdade --- artesanal, suculento e com sabor.</p><p style="margin-top:8px">Nosso hamburguer de frango com espinafre é exatamente isso. Peito de frango como base, espinafre fresco que aporta um toque verde e uma textura sutil, alho e salsinha que arredondam o aroma, e pimenta preta que da aquele ponto justo de personalidade.</p><p style="margin-top:8px">E o favorito de quem cuida da dieta, de quem busca variedade no churrasco e de quem simplesmente aprecia sabores limpos e equilibrados.</p></div></details><div class="produto-meta"><span>Opção Saudavel</span><span>200g / unidade</span><span>Refrigerado 0-4 C | 2-3 días</span></div></div>
+
+        <div class="produto-card"><div class="produto-header"><h4>Hamburguer Criollo</h4><span class="produto-preco">2,80 EUR / ud (100g)</span></div><p class="produto-tagline">Pequeno, intenso e viciante.</p><p class="copy-text">Carne de porco com temperos crioulos e alho. Suculento, saboroso e com aquele ponto caseiro que vicia. Tamanho slider ideal para grelha ou chapa.</p><details class="desc-completa"><summary>Ver descrição completa</summary><div class="inner"><p>O Criollo e nosso hamburguer mais compacto, mas não se engane pelo tamanho. O que falta em gramas sobra em sabor.</p><p style="margin-top:8px">Carne de porco fresca temperada com especiarias crioulas e alho, que dao um aroma envolvente e um sabor encorpado, com aquele ponto caseiro das receitas passadas de geração em geração.</p><p style="margin-top:8px">Seu formato de 100g o torna o hamburguer perfeito para slider: coloque varios na grelha, acompanhe com molhos diferentes e deixe cada um montar o seu. Em um churrasco com amigos, o Criollo desaparece em minutos.</p><p style="margin-top:8px">Também funciona otimo como aperitivo, como petisco ou como complemento a um churrasco maior. E pequeno, intenso e extremamente viciante.</p></div></details><div class="produto-meta"><span>Formato Slider</span><span>100g / unidade</span><span>Refrigerado 0-4 C | 3-5 días</span></div></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 4</p><h3>Banner CTA na Loja</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Não encontra o que procura? Preparamos seu pedido sob medida.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Nos escreva pelo WhatsApp com o que precisa e montamos um pack personalizado. Quantidades, sabores, formatos --- o que você quiser.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Pedir pelo WhatsApp >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 5</p><h3>Barra de Beneficios</h3>
+        <div class="copy-block"><span class="label corpo">Faixa horizontal</span><p class="copy-text"><strong>Envio Refrigerado</strong> para toda a Espanha | <strong>Preço Exclusivo</strong> Web | <strong>Elaboração</strong> 100% Artesanal | <strong>Garantía:</strong> se chegar mal, repomos</p></div>
+    </div>
+</div>
+
+<!-- PAGINAS 4-7 PT seguem a mesma logica - referencia rapida -->
+<div class="page" id="p4-pt">
+    <div class="page-title"><h2>Página 4 - Kits e Ofertas</h2></div>
+    <div class="secao">
+        <p class="secao-label">Seção 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Kits de churrasco prontos para curtir</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Não perca tempo calculando quantidades nem procurando em tres lugares. Escolha seu pack, nós cuidamos para que tudo seja de primeira. Carnes e hamburgueres artesanais de pecuária própria, preparados para a brasa.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 2</p><h3>Por Que Escolher um Kit</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Tudo que você precisa para seu churrasco em um só pedido</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Organizar um churrasco pode ser complicado: quanta carne compro, para quantas pessoas, se levo disso ou daquilo. Os kits da Carnicas Dani foram pensados para tirar essa dor de cabeca.</p><p class="copy-text" style="margin-top:12px">Cada pack e desenhado com o equilibrio justo de carnes, hamburgueres e preparados para não sobrar nem faltar. Com produto de pecuária própria, elaboração artesanal e envío refrigerado na sua porta.</p><p class="copy-text" style="margin-top:12px">Você só se preocupe em acender as brasas.</p></div>
+        <div class="pilares">
+            <div class="pilar"><h4>Quantidades Calculadas</h4><p>Cada kit e pensado para um número concreto de pessoas. Sem desperdicio, sem ficar curto.</p></div>
+            <div class="pilar"><h4>Variedade Garantida</h4><p>Mix de hamburgueres, carnes é elaborados artesanais para o churrasco ter de tudo.</p></div>
+            <div class="pilar"><h4>Preço Otimizado</h4><p>Os packs tem preço mais ajustado que comprar cada produto separadamente. Melhor preço, mesma qualidade.</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seções 3-6</p><h3>Os 4 Packs</h3>
+        <div class="produto-card"><div class="produto-header"><h4>Pack Degustação</h4><span class="produto-preco">Preço a definir</span></div><div class="produto-meta" style="margin-bottom:12px"><span>~1,2 kg</span><span>2-3 pessoas</span><span style="background:#d4a853;color:#1a3a2a">Ideal para experimentar</span></div><p class="copy-text">O primeiro passo para conhecer a Carnicas Dani. Uma seleção cuidadosa dos nossos hamburgueres mais representativos e um embutido artesanal para você provar a qualidade sem compromisso.</p><p class="copy-text" style="margin-top:8px">Perfeito para um jantar a dois, uma refeição em casa ou simplesmente para descobrir se isso é o que estava procurando (spoiler: é).</p><p class="copy-text" style="margin-top:12px"><strong>Inclui:</strong></p><p class="copy-text"><ul><li>Seleção de hamburgueres artesanais variados</li><li>Embutido artesanal asturiano</li><li>[Confirmar conteúdo exato com o cliente]</li></ul></p><div class="destaque-block">Se é sua primeira compra, este é o pack que recomendamos. Prove o melhor e decida se quer mais.</div></div>
+        <div class="produto-card" style="border-color:#d4a853;border-width:2px"><div class="produto-header"><h4>Pack Top</h4><span class="produto-preco">Preço a definir</span></div><div class="produto-meta" style="margin-bottom:12px"><span>~4 kg</span><span>4-6 pessoas</span><span style="background:#8b3a3a;color:#fff">O mais vendido</span></div><p class="copy-text">Nosso pack estrela. O que mais vende e o que mais repetem nossos clientes. Uma seleção generosa de hamburgueres artesanais de diferentes sabores, carne para churrasco e embutido asturiano. Tudo que você precisa para um churrasco de verdade.</p><p class="copy-text" style="margin-top:8px">Desenhado para aquele encontro com amigos, a refeição familiar de domingo ou aquele churrasco de fim de semana que você merece.</p><p class="copy-text" style="margin-top:12px"><strong>Inclui:</strong></p><p class="copy-text"><ul><li>Variedade ampla de hamburgueres artesanais (diferentes sabores)</li><li>Carne fresca para churrasco</li><li>Embutido artesanal asturiano</li><li>[Confirmar conteúdo exato com o cliente]</li></ul></p><div class="destaque-block">O favorito dos nossos clientes. Se busca a relação qualidade-quantidade-preço perfeita, é este.</div></div>
+        <div class="produto-card"><div class="produto-header"><h4>Pack Festa</h4><span class="produto-preco">Preço a definir</span></div><div class="produto-meta" style="margin-bottom:12px"><span>~7-12 kg</span><span>8-12 pessoas</span><span style="background:#5a4a7a;color:#fff">Para as grandes ocasiões</span></div><p class="copy-text">O churrasquinho grande. O pack para as comemorações que ficam na memoria: aniversários, reuniões familiares, o churrasco com toda a turma, o churrasco de verão.</p><p class="copy-text" style="margin-top:8px">Sortimento completo de carnes, hamburgueres de diferentes tipos, embutidos e elaborados artesanais para não faltar absolutamente nada. Tudo de pecuária própria, tudo feito a mão, tudo enviado refrigerado.</p><p class="copy-text" style="margin-top:12px"><strong>Inclui:</strong></p><p class="copy-text"><ul><li>Sortimento completo de hamburgueres artesanais (múltiplos sabores)</li><li>Seleção de carnes frescas para churrasco</li><li>Variedade de embutidos artesanais asturianos</li><li>Preparados para churrasco</li><li>[Confirmar conteúdo exato com o cliente]</li></ul></p><div class="destaque-block">Para 8-12 pessoas. Se a comemoração é grande, este pack está a altura.</div></div>
+        <div class="produto-card" style="border-style:dashed"><div class="produto-header"><h4>Pack Personalizado</h4><span class="produto-preco">Conforme seleção</span></div><div class="produto-meta" style="margin-bottom:12px"><span>Peso sob medida</span><span>Quantas você quiser</span><span style="background:#2d5a3f;color:#fff">Você decide</span></div><p class="copy-text">Nenhum pack encaixa no que precisa? Sem problema. Nos escreva pelo WhatsApp e montamos um pedido sob medida.</p><p class="copy-text" style="margin-top:8px">Diga quantas pessoas são, que tipo de produtos prefere, se tem algum hamburguer que não pode faltar, se quer embutido extra ou se alguém do grupo prefere frango. Nos calculamos quantidades, selecionamos produtos e preparamos um pack único.</p><p class="copy-text" style="margin-top:8px">É como falar com seu açougueiro de confiança, mas pelo celular.</p><p class="copy-text" style="margin-top:12px"><strong>Como funciona:</strong></p><p class="copy-text"><ol><li>Nos escreva pelo WhatsApp contando o que precisa</li><li>Assessoramos e enviamos uma proposta com produtos e preço</li><li>Confirma, pagamos e enviamos refrigerado</li></ol></p><span class="cta-text" style="margin-top:12px">Pedir meu Pack pelo WhatsApp >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 7</p><h3>Comparativo de Packs</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Qual é o pack ideal para você?</p></div>
+        <div class="tabela-wrapper"><table><thead><tr><th>Característica</th><th>Degustação</th><th>Top</th><th>Festa</th><th>Personalizado</th></tr></thead><tbody><tr><td>Peso apróximado</td><td>~1,2 kg</td><td>~4 kg</td><td>~7-12 kg</td><td>Sob medida</td></tr><tr><td>Pessoas</td><td>2-3</td><td>4-6</td><td>8-12</td><td>Você decide</td></tr><tr><td>Hamburgueres variados</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Sim</td></tr><tr><td>Carne para churrasco</td><td>--</td><td>Sim</td><td>Sim</td><td>Opcional</td></tr><tr><td>Embutido artesanal</td><td>Sim</td><td>Sim</td><td>Sim</td><td>Opcional</td></tr><tr><td>Ideal para</td><td>Experimentar</td><td>Encontro com amigos</td><td>Comemoracoes</td><td>O que precisar</td></tr></tbody></table></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 8</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Seu churrasco perfeito está a um clique</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Escolha seu pack, adicione ao carrinho e receba refrigerado na sua porta. Ou nos escreva pelo WhatsApp e montamos algo sob medida. Você decide como, nós colocamos a qualidade.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Voltar a Loja >>></span><span class="cta-text secondary">Pedir pelo WhatsApp >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 5 PT -->
+<div class="page" id="p5-pt">
+    <div class="page-title"><h2>Página 5 - Nossas Carnes (Diferenciais)</h2></div>
+    <div class="secao">
+        <p class="secao-label">Seção 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nem toda carne e igual. E nós queremos que você saiba disso.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Entender o que você compra é o primeiro passo para comer melhor. Aqui explicamos de onde vem nossas carnes, o que as torna especiais e por que a origem importa mais do que você imagina.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 2</p><h3>De Onde Vem Nossa Carne</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pecuária própria: a diferença que se prova</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Quando dizemos "pecuária própria" não e um slogan de marketing. E um fato. Nosso gado nasce, é criado e pasta nos campos das Asturias. Nos controlamos o processo completo.</p><p class="copy-text" style="margin-top:12px"><strong>Primeiro:</strong> sabemos exatamente o que ha por tras de cada peça de carne que chega até você. Sem intermediarios, sem incerteza, sem surpresas.</p><p class="copy-text" style="margin-top:12px"><strong>Segundo:</strong> a qualidade se nota. Um animal que pastou livremente, sem estresse, com alimentação natural, produz uma carne com sabor, textura e maciez que não se conseguem com criação intensiva.</p></div>
+        <div class="destaque-block">A carne do supermercado pode vir de qualquer lugar. A nossa vem dos nossos pastos. E isso se nota na primeira mordida.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 3</p><h3>Novilha Asturiana</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Novilha Asturiana: a rainha do nosso açougue</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">A novilha asturiana é o pilar da Carnicas Dani. Criada em pasto extensivo nos vales das Asturias, nossa novilha tem um sabor profundo, uma textura firme porém macia, e um nível de suculência que só a criação natural proporciona.</p></div>
+        <div class="copy-block"><span class="label corpo">Por que é especial</span><p class="copy-text"><ul><li><strong>Alimentação natural:</strong> capim e pasto fresco, sem rações industriais como base</li><li><strong>Criação extensiva:</strong> os animais pastam livremente, sem confinamento</li><li><strong>Bem-estar animal:</strong> o estresse altera a qualidade da carne --- nosso gado vive tranquilo</li><li><strong>Maturação adequada:</strong> respeitamos os tempos de maturação para que a carne alcance seu ponto ótimo de sabor e maciez</li></ul></p></div>
+        <div class="copy-block"><span class="label corpo">Produtos com novilha asturiana</span><p class="copy-text"><ul><li>Hamburguer de Novilha Asturiana</li><li>Hamburguer Misto de Novilha e Porco</li><li>Hamburguer Asturiano (com picadillo e queijo azul)</li><li>Hamburguer Explosivo (premium, pecuária própria)</li><li>Hamburguer Cachopa</li><li>Carne fresca de novilha para churrasco</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 4</p><h3>Porco de Qualidade</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Porco: suculência e versatilidade</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">O porco é a base de muitos dos nossos hamburgueres e elaborados mais populares. Trabalhamos com porco de primeira qualidade, selecionando as melhores peças --- especialmente o lombo --- para garantir suculência, maciez e um sabor limpo.</p></div>
+        <div class="copy-block"><span class="label corpo">Por que o escolhemos</span><p class="copy-text"><ul><li><strong>Peças selecionadas:</strong> lombo de porco fresco como base principal</li><li><strong>Suculência natural:</strong> a gordura infiltrada do bom porco é a chave de um hamburguer suculento</li><li><strong>Versatilidade:</strong> combina com jalapeños, piquillo, bacon, temperos crioulos... cada combinação funciona</li><li><strong>Tradição asturiana:</strong> o porco é protagonista de muitos pratos típicos da gastronomia asturiana</li></ul></p></div>
+        <div class="copy-block"><span class="label corpo">Produtos com porco</span><p class="copy-text"><ul><li>Hamburguer Misto de Novilha e Porco</li><li>Hamburguer de Porco com Jalapeños</li><li>Hamburguer de Lombo de Porco, Piquillo e Bacon</li><li>Hamburguer Criollo</li><li>Embutidos artesanais (chouriço, etc.)</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 5</p><h3>Frango de Primeira</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Frango: leve sem abrir mão do sabor</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Nem todo mundo busca o mais pesado. Para quem prefere uma opção mais leve, trabalhamos com frango de primeira qualidade: peito fresco, sem injeção de água, sem enchimentos.</p><p class="copy-text" style="margin-top:12px">Nossos hamburgueres de frango são suaves, suculentos e com um sabor limpo que funciona perfeitamente tanto na grelha quanto na chapa.</p></div>
+        <div class="copy-block"><span class="label corpo">Por que é diferente</span><p class="copy-text"><ul><li><strong>Peito de primeira:</strong> sem água adicionada, sem conservantes</li><li><strong>Textura real:</strong> não é aquela pasta compacta dos hamburgueres de supermercado</li><li><strong>Ingredientes frescos:</strong> espinafre, alho, salsinha, pimenta preta --- complementos reais, não saborizantes</li><li><strong>Artesanal:</strong> moldado a mão no nosso obrador, como todos</li></ul></p></div>
+        <div class="copy-block"><span class="label corpo">Produtos com frango</span><p class="copy-text"><ul><li>Hamburguer de Frango</li><li>Hamburguer de Frango com Espinafre</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 6</p><h3>Pasto Extensivo vs. Criação Intensiva</h3>
+        <div class="tabela-wrapper"><table><thead><tr><th>Aspecto</th><th style="background:#d4a853;color:#1a3a2a">Pasto Extensivo (Carnicas Dani)</th><th style="background:#666">Criação Intensiva (Industrial)</th></tr></thead><tbody><tr><td>Alimentacao</td><td>Pasto natural, capim fresco</td><td>Racoes compostas e cereais</td></tr><tr><td>Espaco</td><td>Campos abertos, liberdade de movimento</td><td>Confinamento em galpoes</td></tr><tr><td>Ritmo de crescimento</td><td>Natural, sem forcar</td><td>Acelerado com suplementos</td></tr><tr><td>Estresse do animal</td><td>Minimo</td><td>Elevado</td></tr><tr><td>Sabor da carne</td><td>Profundo, nuancado, com personalidade</td><td>Sem graca, homogéneo</td></tr><tr><td>Textura</td><td>Firme e macia</td><td>Variavel, as vezes fibrosa</td></tr><tr><td>Gordura infiltrada</td><td>Natural, equilibrada</td><td>Irregular</td></tr><tr><td>Rastreabilidade</td><td>Completa --- do pasto ao produto</td><td>Parcial ou inexistente</td></tr></tbody></table></div>
+        <div class="destaque-block">Não é questão de opinião. É biologia. Um animal que vive bem produz uma carne melhor. Simples assim.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 7</p><h3>Compromisso com a Qualidade</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nosso compromisso com você</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Cada produto que sai da Carnicas Dani cumpre nossos padrões de qualidade:</p><p class="copy-text" style="margin-top:12px"><ul><li><strong>Matéria-prima de primeira:</strong> selecionamos a carne, os ingredientes e os complementos com o mesmo critério com que escolheríamos para nossa própria mesa</li><li><strong>Elaboração artesanal:</strong> tudo feito a mão no nosso obrador, em lotes pequenos e controlados</li><li><strong>Sem conservantes artificiais:</strong> ingredientes reais, receitas honestas</li><li><strong>Registro sanitário:</strong> cumprimos toda a normativa sanitária e de segurança alimentar vigente</li><li><strong>Envio refrigerado:</strong> cadeia de frio garantida para que o produto chegue em ótimas condições</li></ul></p></div>
+        <div class="destaque-block">Se não colocaríamos na nossa mesa, não sai do nosso obrador.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 8</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Agora que sabe o que come, escolha o melhor</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Explore nossa loja e leve para sua mesa carne de pecuária própria, elaborada a mão e enviada refrigerada desde as Asturias.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir para a Loja >>></span><span class="cta-text secondary">Ver Kits de Churrasco >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 6 PT -->
+<div class="page" id="p6-pt">
+    <div class="page-title"><h2>Página 6 - Pedidos e Contato</h2></div>
+    <div class="secao">
+        <p class="secao-label">Seção 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Faça seu pedido ou fale conosco</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Compre diretamente na loja, peça um pack sob medida ou nós escreva para qualquer consulta. Estamos aqui para ajudar --- como seu açougueiro de confiança, mas a uma mensagem de distância.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 2</p><h3>Como Fazer Seu Pedido</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">É muito fácil pedir na Carnicas Dani</p></div>
+        <div class="pilares" style="grid-template-columns:1fr">
+            <div class="pilar"><h4>Passo 1 - Escolha seus produtos</h4><p>Navegue pela loja, escolha hamburgueres, kits, embutidos ou carne fresca. Adicione ao carrinho o que quiser.</p></div>
+            <div class="pilar"><h4>Passo 2 - Complete seu pedido</h4><p>Insira seus dados de envío e escolha seu método de pagamento. Todo o processo é seguro e rápido.</p></div>
+            <div class="pilar"><h4>Passo 3 - Preparamos fresco</h4><p>Assim que recebemos seu pedido, preparamos tudo no nosso obrador e embalamos a vacuo para conservar a frescura.</p></div>
+            <div class="pilar"><h4>Passo 4 - Enviamos refrigerado</h4><p>Seu pedido sai em embalagem isotérmica com frío garantido para chegar em perfeitas condições a qualquer ponto da Espanha.</p></div>
+            <div class="pilar"><h4>Passo 5 - Aproveite</h4><p>Receba em casa, acenda a churrasqueira e aproveite carne artesanal de verdade. Simples assim.</p></div>
+        </div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Ir para a Loja >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 3</p><h3>Pedidos Personalizados</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pedidos sob medida pelo WhatsApp</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Além da loja online, você pode fazer pedidos completamente personalizados pelo WhatsApp.</p><p class="copy-text" style="margin-top:12px"><ul><li>Quer um pack para 20 pessoas? Nos escreva.</li><li>Precisa só de hamburgueres de um sabor concreto? Nos escreva.</li><li>Tem um evento, uma comemoração ou um churrasco especial? Nos escreva.</li><li>Não sabe o que pedir nem em que quantidade? Nos escreva e assessoramos.</li></ul></p><p class="copy-text" style="margin-top:12px">Somos seu açougueiro de confiança. Só que ao invés de fazer fila, nos manda uma mensagem.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Pedir pelo WhatsApp >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 4</p><h3>Pedidos para Empresas e Eventos</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Pedidos para empresas, hotelaria e eventos</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Se tem um restaurante, bar, catering ou empresa e precisa de fornecimento regular de hamburgueres artesanais ou produtos cárnicos, entre em contato para condições especiais.</p><p class="copy-text" style="margin-top:12px"><strong>Oferecemos:</strong></p><p class="copy-text"><ul><li>Preços especiais para hotelaria e empresas</li><li>Pedidos recorrentes com frequência combinada</li><li>Personalização de produto (peso, ingredientes, formato)</li><li>Faturamento adaptado</li><li>Atendimento direto e prioritário</li></ul></p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Solicitar Condições para Empresas >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 5</p><h3>Canais de Contato</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Entre em contato conosco</p></div>
+        <div class="pilares" style="grid-template-columns:1fr 1fr">
+            <div class="pilar" style="border-color:#25D366;border-width:2px"><h4>WhatsApp --- Atendimento Direto</h4><p>Nosso canal mais rápido. Nos escreva para pedidos, dúvidas, recomendações ou o que precisar. Respondemos como se você estivesse no nosso açougue.</p><br><span class="cta-text">Escrever pelo WhatsApp >>></span></div>
+            <div class="pilar"><h4>E-mail</h4><p>Para consultas detalhadas, pedidos empresariais ou questões que necessitem documentação.</p><p style="margin-top:8px;font-weight:600">sm.cesarmartinez@gmail.com</p></div>
+            <div class="pilar"><h4>Instagram</h4><p>Nos siga para ver nossos produtos, receitas, bastidores e novidades. A melhor forma de nos conhecer dia a dia.</p><p style="margin-top:8px;font-weight:600">@carnicasdani</p></div>
+            <div class="pilar"><h4>Telefone</h4><p>Se prefere ligar, estamos aqui. Atendimento em horário comercial.</p><p style="margin-top:8px;font-weight:600">[número a definir]</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 6</p><h3>Formulário de Contato</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Ou se preferir, nos deixe uma mensagem</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Preencha o formulário e responderemos o mais breve possível.</p></div>
+        <div class="copy-block"><span class="label corpo">Campos</span><p class="copy-text"><ul><li>Nome *</li><li>E-mail *</li><li>Telefone / WhatsApp *</li><li>Motivo do contato (dropdown): Pedido personalizado | Consulta sobre produtos | Pedido para empresa/hotelaria | Devolução ou incidencia | Outro</li><li>Sua mensagem *</li></ul></p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Enviar Mensagem >>></span></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 7</p><h3>CTA Reforço</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Tem dúvidas? O WhatsApp é o mais rápido.</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Nos escreva e respondemos num instante. Sem formulários, sem espera.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Abrir WhatsApp >>></span></div>
+    </div>
+</div>
+
+<!-- PAGINA 7 PT -->
+<div class="page" id="p7-pt">
+    <div class="page-title"><h2>Página 7 - Envíos e Perguntas Frequentes</h2></div>
+    <div class="secao">
+        <p class="secao-label">Seção 1</p><h3>Hero</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Envíos e perguntas frequentes</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Tudo que você precisa saber sobre como enviamos, prazos, conservação e as dúvidas mais comuns dos nossos clientes. Se não encontrar sua resposta, nós escreva.</p></div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 2</p><h3>Informação de Envíos</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Como enviamos seu pedido</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Enviamos para toda a península espanhola. Seu pedido é preparado fresco no nosso obrador, embalado a vácuo e empacotado em embalagem isotérmica com frio para garantir que chegue em perfeitas condições.</p></div>
+        <div class="pilares" style="grid-template-columns:1fr">
+            <div class="pilar"><h4>Para onde enviamos?</h4><p>Realizamos envios para toda a Espanha peninsular. Para Baleares, Canárias, Ceuta e Melilla, consulte pelo WhatsApp disponibilidade e custo.</p></div>
+            <div class="pilar"><h4>Quando chega meu pedido?</h4><p>Os pedidos são preparados entre 24 e 48 horas úteis após confirmação do pagamento. O prazo de entrega depende da região, mas na maioria dos destinos é de 24 a 48 horas adicionais após sair do obrador. Enviamos código de rastreamento para que possa acompanhar seu pacote a todo momento.</p></div>
+            <div class="pilar"><h4>Cadeia de frio garantida</h4><p>Todos os pedidos são enviados em embalagem isotérmica com frio (gel refrigerante ou gelo seco conforme a época do ano). Nosso objetivo é que o produto chegue como se você acabasse de sair do nosso açougue: fresco, na temperatura e pronto para curtir.</p></div>
+            <div class="pilar"><h4>Quanto custa o envio?</h4><p>O custo de envio é calculado automaticamente no processo de compra conforme sua localização e o peso do pedido. Para pedidos acima de [valor a definir], o envio é gratuito. Consulte condições no carrinho.</p><p class="copy-text" style="margin-top:8px;font-size:0.85rem;color:#8b3a3a">[NOTA PARA O CLIENTE: Definir se há envio gratis a partir de um valor mínimo, custo fixo ou variável. Este dado é chave para a conversão.]</p></div>
+            <div class="pilar"><h4>O que faço quando recebo meu pedido?</h4><p>Ao receber seu pedido, coloque os produtos na geladeira imediatamente. Se não for consumir nos próximos 3-5 dias, pode congelar diretamente na embalagem a vácuo. Ao descongelar, faça sempre na geladeira (nunca em temperatura ambiente) para manter a qualidade e a segurança alimentar.</p></div>
+        </div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 3</p><h3>Garantía</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Nossa garantía: sem risco para você</p></div>
+        <div class="copy-block"><span class="label corpo">Corpo</span><p class="copy-text">Se seu pedido chegar em mau estado --- produto danificado, embalagem rompida, cadeia de frío comprometida --- repomos ou devolvemos o dinheiro. Sem perguntas. Sem letras miudas. Sem complicações.</p><p class="copy-text" style="margin-top:12px">Mande uma foto pelo WhatsApp com o que aconteceu e resolvemos imediatamente. Simples assim.</p></div>
+        <div class="destaque-block">Nossa reputação se constroi pedido a pedido. Não vamos arrisca-la por um envio. Se algo não esta bem, arrumamos. Ponto.</div>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 4</p><h3>Perguntas Frequentes</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Perguntas frequentes</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">As dúvidas mais comuns dos nossos clientes, resolvidas.</p></div>
+        <h4 class="faq-categoria">Sobre os Produtos</h4>
+        <details class="faq-item"><summary>De onde vem a carne da Carnicas Dani?</summary><div class="faq-resposta">Nossa carne de novilha vem da nossa própria pecuária nas Asturias. Criamos nosso gado em pasto extensivo, controlando toda a cadeia do campo ao obrador. O porco e o frango são de primeira qualidade, selecionados por nós com os mesmos padrões de exigência.</div></details>
+        <details class="faq-item"><summary>Os hamburgueres levam conservantes ou aditivos artificiais?</summary><div class="faq-resposta">Não. Nossos hamburgueres são elaborados com ingredientes frescos e naturais: carne, temperos, verduras e condimentos reais. Não adicionamos conservantes artificiais, glutamato, nem enchimentos de farinha de rosca ou soja. O que você vê nos ingredientes é o que levam, nada mais.</div></details>
+        <details class="faq-item"><summary>Quanto pesam os hamburgueres?</summary><div class="faq-resposta">A maioria dos nossos hamburgueres pesa 200g por unidade. O Hamburguer Cachopa pesa aproximadamente 300g (é maior por seus ingredientes). E o Hamburguer Criollo pesa 100g (formato slider/petisco). O peso exato de cada produto está indicado na sua ficha.</div></details>
+        <details class="faq-item"><summary>Posso comprar hamburgueres avulsos ou só em packs?</summary><div class="faq-resposta">Pode comprar tanto unidades avulsas quanto packs. Na loja online cada hamburguer é vendido por unidade, e os kits de churrasco são seleções predefinidas com variedade de produtos. Também pode nos pedir um pack personalizado pelo WhatsApp.</div></details>
+        <h4 class="faq-categoria">Sobre Pedidos e Compra</h4>
+        <details class="faq-item"><summary>Como faço um pedido?</summary><div class="faq-resposta">Duas opções: comprar diretamente na loja online (adicionar ao carrinho, dados de envio, pagamento seguro) ou nos escrever pelo WhatsApp para um pedido personalizado. Em ambos os casos, preparamos tudo fresco e enviamos.</div></details>
+        <details class="faq-item"><summary>Quais métodos de pagamento aceitam?</summary><div class="faq-resposta">Aceitamos cartão de crédito/débito (Visa, Mastercard), Bizum e transferência bancária. O processo de pagamento online é 100% seguro. [Confirmar métodos de pagamento com o cliente.]</div></details>
+        <details class="faq-item"><summary>Posso modificar ou cancelar um pedido já feito?</summary><div class="faq-resposta">Se ainda não começamos a preparar, sim. Nos escreva pelo WhatsApp o mais rápido possível e gerenciamos. Uma vez que o pedido entra em produção no obrador, não é possível modificar nem cancelar.</div></details>
+        <details class="faq-item"><summary>O preço no site é o mesmo da loja física?</summary><div class="faq-resposta">Não. Os preços no site são exclusivos e mais econômicos que na loja física. É nossa forma de agradecer a compra online e compensar os custos de envio.</div></details>
+        <h4 class="faq-categoria">Sobre Envios</h4>
+        <details class="faq-item"><summary>Enviam para toda a Espanha?</summary><div class="faq-resposta">Sim, realizamos envios para toda a Espanha peninsular. Para Baleares, Canárias, Ceuta e Melilla, consulte disponibilidade e custo pelo WhatsApp.</div></details>
+        <details class="faq-item"><summary>Quanto tempo leva para chegar?</summary><div class="faq-resposta">Preparamos seu pedido em 24-48h úteis após confirmação do pagamento. Uma vez que sai do obrador, o prazo de entrega é de 24-48h adicionais conforme a região. Você receberá um código de rastreamento por email ou WhatsApp.</div></details>
+        <details class="faq-item"><summary>Como mantêm a cadeia de frio durante o envio?</summary><div class="faq-resposta">Enviamos todos os pedidos em embalagem isotérmica com frio (gel refrigerante ou gelo seco conforme a temperatura exterior). O produto viaja embalado a vácuo dentro da embalagem isotérmica para manter a temperatura adequada durante todo o transporte.</div></details>
+        <details class="faq-item"><summary>E se eu não estiver em casa quando o entregador chegar?</summary><div class="faq-resposta">O serviço de entrega tentará a entrega e deixará um aviso. Pode reagendar a entrega ou retirar no ponto mais próximo. Recomendamos indicar um endereço onde haja alguém disponível para receber, já que se trata de produto fresco refrigerado.</div></details>
+        <h4 class="faq-categoria">Sobre Conservação</h4>
+        <details class="faq-item"><summary>Como devo conservar os produtos ao receber?</summary><div class="faq-resposta">Coloque os produtos na geladeira imediatamente ao receber. Mantenha refrigerados entre 0 e 4 graus C. Se não for consumir nos próximos 3-5 dias, pode congelar diretamente na embalagem a vácuo.</div></details>
+        <details class="faq-item"><summary>Posso congelar os hamburgueres?</summary><div class="faq-resposta">Sim. Todos os nossos hamburgueres podem ser congelados sem perder qualidade. Congele na embalagem a vácuo original. Ao descongelar, faça sempre na geladeira (nunca em temperatura ambiente nem no micro-ondas). Uma vez descongelados, consuma nas 24 horas seguintes e não congele novamente.</div></details>
+        <details class="faq-item"><summary>Quanto tempo duram os hamburgueres na geladeira?</summary><div class="faq-resposta">Refrigerados entre 0 e 4 graus C, nossos hamburgueres se conservam em ótimas condições durante 3 a 5 dias. Os de frango recomendamos consumir em 2 a 3 dias. Sempre consulte a data de consumo preferencial indicada na embalagem.</div></details>
+        <h4 class="faq-categoria">Sobre Devoluções e Garantia</h4>
+        <details class="faq-item"><summary>O que faço se meu pedido chegar em mau estado?</summary><div class="faq-resposta">Mande uma foto pelo WhatsApp mostrando o estado do produto e da embalagem. Gerenciamos de forma imediata: repomos o produto ou devolvemos o valor. Sem perguntas, sem complicações. Nossa prioridade é que você fique satisfeito.</div></details>
+        <details class="faq-item"><summary>Posso devolver um produto se não gostar?</summary><div class="faq-resposta">Por se tratar de produtos alimentícios frescos e perecíveis, não aceitamos devoluções por preferência de sabor. No entanto, se o produto tiver algum defeito de elaboração, dano no envio ou incidência de qualidade, repomos ou devolvemos o valor sem problema.</div></details>
+        <details class="faq-item"><summary>Fazem reembolsos?</summary><div class="faq-resposta">Sim. Em caso de que seu pedido chegue em mau estado ou com incidências que afetem a qualidade, realizamos o reembolso completo do valor afetado. O reembolso é processado no mesmo método de pagamento utilizado na compra em um prazo de 5 a 10 dias úteis.</div></details>
+    </div>
+    <div class="secao">
+        <p class="secao-label">Seção 5</p><h3>CTA Final</h3>
+        <div class="copy-block"><span class="label headline">Headline</span><p class="copy-headline">Não encontrou sua resposta?</p></div>
+        <div class="copy-block"><span class="label subtitulo">Subtítulo</span><p class="copy-text">Nos escreva pelo WhatsApp ou por e-mail e resolvemos sua dúvida na hora.</p></div>
+        <div class="copy-block"><span class="label cta">CTA</span><br><span class="cta-text">Escrever pelo WhatsApp >>></span><span class="cta-text secondary">sm.cesarmartinez@gmail.com</span></div>
+    </div>
+</div>
+
+<!-- NOTAS GERAIS PT -->
+<div class="page" id="notas-pt">
+    <div class="page-title"><h2>Notas Gerais para o Designer / Desenvolvedor</h2></div>
+    <div class="secao">
+        <h3>Tom Visual Recomendado</h3>
+        <div class="copy-block"><p class="copy-text"><strong>Cores:</strong> Verde escuro asturiano (verde floresta), preto, branco quebrado/creme e um tom de destaque quente (vermelho escuro, terracota ou dourado). A paleta deve transmitir: artesanal, natural, premium sem ser elitista, próximo.</p><p class="copy-text" style="margin-top:12px"><strong>Tipografia:</strong> Combinação serif (para títulos, transmite tradição) + sans-serif (para corpo, transmite modernidade). Sugestões: Playfair Display ou DM Serif Display para títulos + Inter ou Work Sans para corpo.</p><p class="copy-text" style="margin-top:12px"><strong>Imagens:</strong> Fotos reais dos produtos, do obrador, do gado e do campo da Carnicas Dani têm prioridade absoluta. Devem ser quentes, com luz natural, estilo "food photography artesanal". Se não estiverem disponíveis, usar banco de imagens com temática de açougue artesanal, churrasco e campo. Evitar imagens de supermercado ou indústria.</p><p class="copy-text" style="margin-top:12px"><strong>Ícones:</strong> Traço grosso, estilo artesanal/handmade. Sugestões: Phosphor Icons (bold), ícones custom desenhados. Nada muito corporativo.</p><p class="copy-text" style="margin-top:12px"><strong>Layout:</strong> Acolhedor e generoso no espaçamento. Seções amplas. Fotos grandes. Muito branco quebrado / creme entre seções. Texturas sutis de madeira, papel craft ou linho nos fundos pode funcionar muito bem para reforçar o artesanal.</p></div>
+    </div>
+    <div class="secao">
+        <h3>Elementos Recorrentes em Todas as Páginas</h3>
+        <div class="copy-block"><p class="copy-text"><ul><li><strong>Botão WhatsApp flutuante:</strong> Fixo no canto inferior direito em TODAS as páginas --- é o canal principal de contato e pedidos</li><li><strong>Header:</strong> Logo Carnicas Dani + menu de navegação + ícone de carrinho (com contador de itens) + botão "Pedir" ou WhatsApp no canto superior direito</li><li><strong>Barra de anúncio (top bar):</strong> Faixa superior com texto tipo "Envio refrigerado para toda a Espanha | Preço exclusivo web | Pecuária própria" --- se repete em todas as páginas</li><li><strong>Rodapé:</strong> Conforme descrito na Página 1, Seção 12 --- padrão para todas as páginas</li><li><strong>Selos de confiança:</strong> Considerar incluir selos de pagamento seguro, garantia de frio, envio assegurado em posições estratégicas (carrinho, checkout, páginas de produto)</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <h3>SEO - Termos Estratégicos para Uso nas Páginas</h3>
+        <div class="copy-block"><p class="copy-text"><ul><li>açougue artesanal online</li><li>açougue asturiano online</li><li>comprar carne online espanha</li><li>hamburgueres artesanais a domicílio</li><li>hamburgueres de novilha asturiana</li><li>carne de pecuária própria</li><li>pack churrasco a domicílio</li><li>kit churrasco online</li><li>carne fresca a domicílio espanha</li><li>embutidos artesanais asturianos</li><li>cachopa asturiana</li><li>envio carne refrigerada</li><li>açougue com pecuária própria</li><li>comprar hamburgueres gourmet online</li><li>carne de pasto extensivo</li><li>hamburguer cachopa</li><li>hamburguer artesanal online</li></ul></p></div>
+    </div>
+    <div class="secao">
+        <h3>Dados a Confirmar com o Cliente</h3>
+        <div class="copy-block"><p class="copy-text"><ul><li>Número de WhatsApp para os CTAs</li><li>Número de telefone de atendimento</li><li>Preços exatos dos Packs (Degustação, Top, Festa)</li><li>Conteúdo exato de cada Pack (quais produtos incluem)</li><li>Custo de envio (fixo, variável, grátis a partir de X euros)</li><li>Métodos de pagamento aceitos (cartão, Bizum, transferência, outros)</li><li>Fotos reais de produtos, obrador, campo e gado</li><li>Logo e identidade visual da Carnicas Dani (paleta de cores, tipografia, manual de marca se existir)</li><li>Depoimentos reais de clientes (substituir os fictícios)</li><li>Horário de atendimento ao cliente</li><li>Dados fiscais para o aviso legal (CIF, razão social, endereço fiscal)</li><li>Política de privacidade e condições de compra (texto legal)</li><li>Zona de envio para Baleares/Canárias: disponível ou não? Custo adicional?</li><li>Envio gratuito: há valor mínimo? Qual?</li><li>Prazo máximo de preparação e envio (para se comprometer no site)</li><li>Categorias adicionais de produtos (carne fresca, embutidos) --- fichas de produto necessárias?</li><li>Produtos asturianos específicos: cachopa pronta, fabada, sidra e bacon --- vendem online?</li></ul></p></div>
+    </div>
+</div>
+
+</div><!-- FIM PORTUGUES -->
+
+
+<!-- FOOTER -->
+<div class="doc-footer">
+    <p>Documento de copy para visualização | Carnicas Dani E-Commerce | 7 Páginas</p>
+    <p>Cliente: Cesar Dierez Martinez | Gerado em 20/03/2026</p>
+</div>
+
+<script>
+function switchLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => {
+        el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'es' ? 'español' : 'português'));
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
