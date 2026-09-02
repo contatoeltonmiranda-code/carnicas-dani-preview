@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pontos pendentes de confirmação — Cárnicas Dani</title>
+<style>
+  :root{
+    --accent:#8E1223;
+    --paper:#faf8f6;
+    --ink:#2b2523;
+    --ink-soft:#5a504c;
+    --ink-light:#948b86;
+    --border:#e4dcd6;
+    --yellow-bg:#fdf6d8;
+    --yellow-border:#e8d98a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Georgia","Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    padding:40px 20px 80px;
+  }
+  .wrap{
+    max-width:880px;
+    margin:0 auto;
+  }
+  header{
+    text-align:left;
+    margin-bottom:28px;
+    padding-bottom:24px;
+    border-bottom:2px solid var(--accent);
+  }
+  h1{
+    font-size:28px;
+    margin:0 0 8px;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 2px;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .subtitle-es{
+    font-size:12px;
+    color:var(--ink-light);
+    margin:0 0 18px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  .intro{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:680px;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .intro-es{
+    font-size:13px;
+    color:var(--ink-light);
+    max-width:680px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    margin-top:8px;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  .card{
+    background:#ffffff;
+    border:1px solid var(--border);
+    border-radius:6px;
+    margin-bottom:20px;
+    padding:22px 24px;
+    position:relative;
+  }
+  .card-head{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:10px;
+  }
+  .num{
+    flex:0 0 auto;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:700;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .card-title-block{flex:1;}
+  h2{
+    font-size:17px;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  .h2-es{
+    font-size:13px;
+    font-weight:400;
+    font-style:italic;
+    color:var(--ink-light);
+    margin:0 0 6px;
+    border-left:2px solid var(--border);
+    padding-left:8px;
+  }
+  .tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:4px;
+  }
+  .tag{
+    display:inline-block;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:3px 9px;
+    border-radius:3px;
+  }
+  .tag-critico{
+    background:var(--accent);
+    color:#fff;
+  }
+  .tag-futuro{
+    background:#efe9e4;
+    color:var(--ink-soft);
+  }
+  .tag-es{
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:0;
+    opacity:0.8;
+    margin-left:3px;
+    font-size:10px;
+  }
+  .card p{
+    font-size:14.5px;
+    color:var(--ink);
+    margin:0 0 6px;
+  }
+  .card p.es{
+    font-size:12.5px;
+    color:var(--ink-light);
+    font-style:italic;
+    margin:0 0 10px;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  .card p:last-of-type{margin-bottom:0;}
+  .nota{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin-top:-4px;
+    margin-bottom:2px;
+  }
+  .nota-es{
+    font-size:11px;
+    color:var(--ink-light);
+    font-style:italic;
+    margin-bottom:12px;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 6px;
+    font-size:13px;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  th,td{
+    border:1px solid var(--border);
+    padding:6px 8px;
+    text-align:right;
+  }
+  th:first-child,td:first-child{text-align:left;}
+  th{
+    background:#f4efeb;
+    font-weight:700;
+    color:var(--ink);
+  }
+  th .th-es{
+    display:block;
+    font-weight:400;
+    font-style:italic;
+    font-size:10px;
+    color:var(--ink-light);
+    text-transform:none;
+  }
+  .ask{
+    margin-top:14px;
+    background:var(--yellow-bg);
+    border:1px solid var(--yellow-border);
+    border-left:4px solid var(--accent);
+    border-radius:4px;
+    padding:12px 16px;
+    font-size:14px;
+  }
+  .ask strong{
+    display:block;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--accent);
+    margin-bottom:6px;
+  }
+  .ask .ask-es{
+    display:block;
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px dashed var(--yellow-border);
+    font-size:12px;
+    color:#8a7f78;
+    font-style:italic;
+  }
+  .ask .ask-es strong{
+    color:#a08a3a;
+  }
+  footer{
+    text-align:center;
+    margin-top:36px;
+    font-size:12px;
+    color:#a89f9a;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  footer .footer-es{
+    display:block;
+    font-size:11px;
+    color:#c3bab5;
+    font-style:italic;
+    margin-top:2px;
+  }
+  @media (max-width:600px){
+    body{padding:24px 14px 60px;}
+    h1{font-size:23px;}
+    .card{padding:16px 16px;}
+    table{font-size:12px;}
+    th,td{padding:5px 6px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Pontos pendentes de confirmação</h1>
+    <p class="subtitle">Cárnicas Dani · loja online · 2 de setembro de 2026</p>
+    <p class="subtitle-es" lang="es">Cárnicas Dani · tienda online · 2 de septiembre de 2026</p>
+    <p class="intro">Estes são os pontos que não podemos decidir por conta própria. Cada um trava ou condiciona uma parte da loja: envio, pagamento ou catálogo. Quanto antes forem confirmados, antes conseguimos deixar tudo funcionando.</p>
+    <p class="intro-es" lang="es">Estos son los puntos que no podemos decidir por nuestra cuenta. Cada uno bloquea o condiciona una parte de la tienda: envíos, pago o catálogo. Cuanto antes se confirmen, antes se puede terminar de dejar todo funcionando.</p>
+  </header>
+
+  <!-- Ponto 1 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">1</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-critico">Trava o envio <span class="tag-es" lang="es">(bloquea el envío)</span></span></div>
+        <h2>Quais serviços da SEUR usamos?</h2>
+        <p class="h2-es" lang="es">¿Qué servicios de SEUR usamos?</p>
+      </div>
+    </div>
+    <p>Nos indicaram usar SEUR 24 e SEUR 13:30. No plugin instalado, os únicos serviços REFRIGERADOS disponíveis são "SEUR 13:30 Frío" e "SEUR 10 Frío". O SEUR 24H só existe como Padrão (sem refrigeração) e o PDF de tarifas enviado só traz tabela do 13:30 e do 10.</p>
+    <p class="es" lang="es">Nos indicaron usar SEUR 24 y SEUR 13:30. En el plugin instalado, los únicos servicios EN FRÍO disponibles son "SEUR 13:30 Frío" y "SEUR 10 Frío". El SEUR 24H solo existe como Estándar (sin refrigeración) y el PDF de tarifas enviado solo trae tabla de 13:30 y 10.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Confirmar que os serviços mostrados ao comprador serão SEUR 13:30 Frío e SEUR 10 Frío. Se realmente quiserem o SEUR 24, precisamos da tabela de tarifas dele e saber se vai sem frio.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Confirmar que los servicios mostrados al comprador serán SEUR 13:30 Frío y SEUR 10 Frío. Si de verdad se quiere SEUR 24, necesitamos su tabla de tarifas y saber si va sin frío.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 2 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">2</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-critico">Trava o envio <span class="tag-es" lang="es">(bloquea el envío)</span></span></div>
+        <h2>Quanto se cobra do comprador pelo envio?</h2>
+        <p class="h2-es" lang="es">¿Cuánto se cobra al comprador por el envío?</p>
+      </div>
+    </div>
+    <p>As tarifas do PDF são base, sem IVA. Sobre elas incidem, segundo o próprio documento: sobretaxa de combustível (~16,77&nbsp;%), origem remota 3,30&nbsp;€ por expedição (origem Argame, Astúrias) e IVA de 21&nbsp;%.</p>
+    <p class="es" lang="es">Las tarifas del PDF son base, sin IVA. Sobre ellas inciden, según el propio documento: suplemento de combustible (~16,77&nbsp;%), origen remoto 3,30&nbsp;€ por expedición (origen Argame, Asturias) e IVA 21&nbsp;%.</p>
+    <p>Tabela do SEUR 13:30 Frío com o custo repassado integralmente ao comprador:</p>
+    <p class="es" lang="es">Tabla del SEUR 13:30 Frío con el coste repercutido íntegramente al comprador:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Peso</th>
+          <th>Curto Peninsular<span class="th-es" lang="es">Corto Peninsular</span></th>
+          <th>Longo Peninsular<span class="th-es" lang="es">Largo Peninsular</span></th>
+          <th>Astúrias<span class="th-es" lang="es">Asturias</span></th>
+          <th>Baleares<span class="th-es" lang="es">Baleares</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Até 1 kg</td><td>11,91 €</td><td>12,67 €</td><td>11,10 €</td><td>16,71 €</td></tr>
+        <tr><td>Até 2 kg</td><td>13,43 €</td><td>15,80 €</td><td>12,50 €</td><td>23,51 €</td></tr>
+        <tr><td>Até 3 kg</td><td>16,94 €</td><td>17,32 €</td><td>15,64 €</td><td>31,05 €</td></tr>
+        <tr><td>Até 4 kg</td><td>17,64 €</td><td>19,63 €</td><td>16,29 €</td><td>32,82 €</td></tr>
+        <tr><td>Até 5 kg</td><td>18,36 €</td><td>20,75 €</td><td>16,94 €</td><td>38,84 €</td></tr>
+      </tbody>
+    </table>
+    <p class="nota">Nota: é um cálculo nosso (tarifa base × 1,1677 + 3,30 € e depois IVA); é uma proposta, não um dado do contrato com a SEUR.</p>
+    <p class="nota-es" lang="es">Nota: es un cálculo nuestro (tarifa base × 1,1677 + 3,30 € y después IVA); es una propuesta, no un dato del contrato con SEUR.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Escolher uma opção — A) repassar o custo real da tabela; B) preço fechado por faixa de peso (ex.: 9,90 € até 3 kg / 12,90 € até 5 kg), assumindo a diferença; C) frete grátis a partir de certo valor de pedido (indicar a partir de quanto).
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Elegir una opción — A) repercutir el coste real de la tabla; B) precio cerrado por franja de peso (ej.: 9,90 € hasta 3 kg / 12,90 € hasta 5 kg), asumiendo la diferencia; C) envío gratis a partir de cierto valor de pedido (indicar a partir de cuánto).</span>
+    </div>
+  </div>
+
+  <!-- Ponto 3 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">3</div>
+      <div class="card-title-block">
+        <h2>Vende-se para as Ilhas Baleares?</h2>
+        <p class="h2-es" lang="es">¿Se vende a Baleares?</p>
+      </div>
+    </div>
+    <p>O SEUR 13:30 Frío tem tarifa para Baleares; o SEUR 10 Frío não a inclui. O produto SEUR Frío exclui Andorra, Gibraltar e Formentera.</p>
+    <p class="es" lang="es">El SEUR 13:30 Frío tiene tarifa para Baleares; el SEUR 10 Frío no la incluye. El producto SEUR Frío excluye Andorra, Gibraltar y Formentera.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Confirmar se a loja envia para as Baleares ou só para a Península.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Confirmar si la tienda envía a Baleares o solo a Península.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 4 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">4</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-critico">Trava o envio <span class="tag-es" lang="es">(bloquea el envío)</span></span></div>
+        <h2>Peso dos Kits de Parrillada 1 e 2</h2>
+        <p class="h2-es" lang="es">Peso de los Kits de Parrillada 1 y 2</p>
+      </div>
+    </div>
+    <p>Já estão carregados: hambúrguer (unidade) 0,2 kg; Cachopa 0,3 kg; Pack 1 Degustación 2,5 kg; Pack 2 Top Ventas 8 uds. 2,0 kg; Pack 2 Top Ventas 12 uds. 2,8 kg. Faltam os Kits de Parrillada 1 e 2 — 16 variantes ao todo, nenhuma com peso declarado.</p>
+    <p class="es" lang="es">Ya están cargados: hamburguesa (unidad) 0,2 kg; Cachopa 0,3 kg; Pack 1 Degustación 2,5 kg; Pack 2 Top Ventas 8 uds. 2,0 kg; Pack 2 Top Ventas 12 uds. 2,8 kg. Faltan los Kits de Parrillada 1 y 2 — 16 variantes en total, ninguna con gramaje declarado.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Peso total (com embalagem) de cada variante. Sem peso, a SEUR não cotiza e o frete sai a 0 €.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Peso total (con embalaje) de cada variante. Sin peso, SEUR no cotiza y el envío sale a 0 €.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 5 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">5</div>
+      <div class="card-title-block">
+        <h2>Pack 3 · Pack Fartucu: peso variável</h2>
+        <p class="h2-es" lang="es">Pack 3 · Pack Fartucu: peso variable</p>
+      </div>
+    </div>
+    <p>O comprador escolhe 12 ou 16 unidades com pesos diferentes (Cachopa 300 g, o restante 200 g), então o peso muda em cada pedido. Hoje está marcado como produto virtual, e por isso o WooCommerce o deixa fora do cálculo de frete.</p>
+    <p class="es" lang="es">El comprador elige 12 o 16 unidades con gramajes distintos (Cachopa 300 g, el resto 200 g), así que el peso cambia en cada pedido. Hoy está marcado como producto virtual, y por eso WooCommerce lo deja fuera del cálculo de envío.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Confirmar que podemos tratá-lo como produto físico e aplicar um peso estimado por tamanho de pack (ex.: 2,8 kg para 12 uds. e 3,6 kg para 16 uds.), ou indicar o peso exato de cada tamanho.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Confirmar que podemos tratarlo como producto físico y aplicar un peso estimado por tamaño de pack (ej.: 2,8 kg para 12 uds. y 3,6 kg para 16 uds.), o indicar el peso exacto de cada tamaño.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 6 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">6</div>
+      <div class="card-title-block">
+        <h2>Dois itens seguem "SEM PREÇO" no Pack Fartucu</h2>
+        <p class="h2-es" lang="es">Dos artículos siguen "SIN PRECIO" en el Pack Fartucu</p>
+      </div>
+    </div>
+    <p>Dentro do construtor do Pack Fartucu há dois itens que não podem ser selecionados: "Mil Hojas de Cecina y Queso de Cabra" e "Rolling".</p>
+    <p class="es" lang="es">Dentro del constructor del Pack Fartucu hay dos artículos que no se pueden seleccionar: "Mil Hojas de Cecina y Queso de Cabra" y "Rolling".</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Preço e peso de cada um.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Precio y gramaje de cada uno.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 7 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">7</div>
+      <div class="card-title-block">
+        <h2>Criolla: falta foto e há dois pesos diferentes</h2>
+        <p class="h2-es" lang="es">Criolla: falta foto y hay dos gramajes distintos</p>
+      </div>
+    </div>
+    <p>É o único item que segue com imagem genérica — não há foto dela nem no Drive nem no site. A ficha diz 100 g e nos packs aparece como 200 g.</p>
+    <p class="es" lang="es">Es el único artículo que sigue con imagen genérica — no hay foto suya ni en el Drive ni en la web. La ficha dice 100 g y en los packs aparece como 200 g.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Uma foto da Criolla e confirmar o peso real.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Una foto de la Criolla y confirmar el gramaje real.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 8 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">8</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-critico">Trava o pagamento <span class="tag-es" lang="es">(bloquea el pago)</span></span></div>
+        <h2>Bizum retorna "Usuário não ativo para compra Bizum"</h2>
+        <p class="h2-es" lang="es">Bizum devuelve "Usuario no activo para compra Bizum"</p>
+      </div>
+    </div>
+    <p>A passarela abre corretamente e mostra o comércio "Carnicas Dani S.L", ou seja, a integração no site funciona; o erro vem do lado do Bizum. Configuração atual: comércio (FUC) 367104106, terminal 1, modo produção.</p>
+    <p class="es" lang="es">La pasarela abre correctamente y muestra el comercio "Carnicas Dani S.L", es decir, la integración en la web funciona; el error viene del lado de Bizum. Configuración actual: comercio (FUC) 367104106, terminal 1, modo producción.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      Perguntar ao banco (CaixaBank / Redsys): (a) se está habilitado o "Bizum Compras (e-commerce)" sobre o FUC 367104106; (b) qual número de terminal corresponde ao Bizum (costuma ser um terminal diferente do de cartão); (c) que revisem o log da operação para ver o código de erro exato.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>Preguntar al banco (CaixaBank / Redsys): (a) si está dado de alta "Bizum Compras (e-commerce)" sobre el FUC 367104106; (b) qué número de terminal corresponde a Bizum (suele ser un terminal distinto del de tarjeta); (c) que revisen el log de la operación para ver el código de error exacto.</span>
+    </div>
+  </div>
+
+  <!-- Ponto 9 -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">9</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-futuro">A futuro</span></div>
+        <h2>Pedido mínimo</h2>
+      </div>
+    </div>
+    <p>Foi comentado que, mais adiante, será necessário um valor mínimo de pedido; fica preparado para ativar quando for decidido.</p>
+    <p class="es" lang="es">Se comentó que más adelante hará falta un valor mínimo de pedido; queda preparado para activar cuando se decida.</p>
+    <div class="ask">
+      <strong>Se pede</strong>
+      O valor mínimo (ex.: 25 €) e se é medido em euros ou em número de unidades.
+      <span class="ask-es" lang="es"><strong>Se pide</strong>El valor mínimo (ej.: 25 €) y si se mide en euros o en número de unidades.</span>
+    </div>
+  </div>
+
+  <footer>Documento de trabalho · loja carnicasdani.com<span class="footer-es" lang="es">Documento de trabajo · tienda carnicasdani.com</span></footer>
+
+</div>
+</body>
+</html>
