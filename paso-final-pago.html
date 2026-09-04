@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Último passo para ativar o pagamento — Cárnicas Dani</title>
+<style>
+  :root{
+    --accent:#8E1223;
+    --paper:#faf8f6;
+    --ink:#2b2523;
+    --ink-soft:#5a504c;
+    --ink-light:#948b86;
+    --border:#e4dcd6;
+    --yellow-bg:#fdf6d8;
+    --yellow-border:#e8d98a;
+    --green-bg:#eef4ea;
+    --green-border:#c5d8bd;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Georgia","Segoe UI",Arial,sans-serif;
+    line-height:1.55;
+    padding:40px 20px 80px;
+  }
+  .wrap{
+    max-width:880px;
+    margin:0 auto;
+  }
+  header{
+    text-align:left;
+    margin-bottom:28px;
+    padding-bottom:24px;
+    border-bottom:2px solid var(--accent);
+  }
+  h1{
+    font-size:28px;
+    margin:0 0 8px;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0 0 2px;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .subtitle-es{
+    font-size:12px;
+    color:var(--ink-light);
+    margin:0 0 18px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  .intro{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:680px;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .intro-es{
+    font-size:13px;
+    color:var(--ink-light);
+    max-width:680px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    margin-top:8px;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  .card{
+    background:#ffffff;
+    border:1px solid var(--border);
+    border-radius:6px;
+    margin-bottom:20px;
+    padding:22px 24px;
+    position:relative;
+  }
+  .card-head{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin-bottom:10px;
+  }
+  .num{
+    flex:0 0 auto;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:700;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .card-title-block{flex:1;}
+  h2{
+    font-size:17px;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  .h2-es{
+    font-size:13px;
+    font-weight:400;
+    font-style:italic;
+    color:var(--ink-light);
+    margin:0 0 6px;
+    border-left:2px solid var(--border);
+    padding-left:8px;
+  }
+  .tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:4px;
+  }
+  .tag{
+    display:inline-block;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    padding:3px 9px;
+    border-radius:3px;
+  }
+  .tag-ok{
+    background:#3f6b34;
+    color:#fff;
+  }
+  .tag-importante{
+    background:var(--accent);
+    color:#fff;
+  }
+  .tag-es{
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:0;
+    opacity:0.8;
+    margin-left:3px;
+    font-size:10px;
+  }
+  .card p{
+    font-size:14.5px;
+    color:var(--ink);
+    margin:0 0 6px;
+  }
+  .card p.es{
+    font-size:12.5px;
+    color:var(--ink-light);
+    font-style:italic;
+    margin:0 0 10px;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  .card p:last-of-type{margin-bottom:0;}
+  ol.passos{
+    margin:12px 0 4px;
+    padding-left:0;
+    list-style:none;
+    counter-reset:passo;
+  }
+  ol.passos li{
+    counter-increment:passo;
+    position:relative;
+    padding:10px 14px 10px 46px;
+    border-bottom:1px solid var(--border);
+    font-size:14.5px;
+  }
+  ol.passos li:last-child{border-bottom:none;}
+  ol.passos li::before{
+    content:counter(passo);
+    position:absolute;
+    left:6px;
+    top:12px;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  ol.passos li .li-es{
+    display:block;
+    font-size:12.5px;
+    color:var(--ink-light);
+    font-style:italic;
+    margin-top:4px;
+    border-left:2px solid var(--border);
+    padding-left:10px;
+  }
+  ol.passos li strong{font-family:"Segoe UI",Arial,sans-serif;}
+  .destaque{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#f4efeb;
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:1px 7px;
+    font-size:13px;
+    white-space:nowrap;
+  }
+  .alerta{
+    margin-top:14px;
+    background:var(--yellow-bg);
+    border:1px solid var(--yellow-border);
+    border-left:4px solid var(--accent);
+    border-radius:4px;
+    padding:12px 16px;
+    font-size:14px;
+  }
+  .alerta strong{
+    display:block;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--accent);
+    margin-bottom:6px;
+  }
+  .alerta .alerta-es{
+    display:block;
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px dashed var(--yellow-border);
+    font-size:12px;
+    color:#8a7f78;
+    font-style:italic;
+  }
+  .alerta .alerta-es strong{
+    color:#a08a3a;
+  }
+  .suporte{
+    margin-top:14px;
+    background:var(--green-bg);
+    border:1px solid var(--green-border);
+    border-left:4px solid #3f6b34;
+    border-radius:4px;
+    padding:12px 16px;
+    font-size:14px;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  .suporte strong{
+    display:block;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:#3f6b34;
+    margin-bottom:6px;
+  }
+  .suporte code{
+    font-size:13px;
+    background:#fff;
+    border:1px solid var(--green-border);
+    border-radius:3px;
+    padding:1px 6px;
+  }
+  .suporte .suporte-es{
+    display:block;
+    margin-top:8px;
+    padding-top:8px;
+    border-top:1px dashed var(--green-border);
+    font-size:12px;
+    color:#6d8663;
+    font-style:italic;
+  }
+  footer{
+    text-align:center;
+    margin-top:36px;
+    font-size:12px;
+    color:#a89f9a;
+    font-family:"Segoe UI",Arial,sans-serif;
+  }
+  footer .footer-es{
+    display:block;
+    font-size:11px;
+    color:#c3bab5;
+    font-style:italic;
+    margin-top:2px;
+  }
+  @media (max-width:600px){
+    body{padding:24px 14px 60px;}
+    h1{font-size:23px;}
+    .card{padding:16px 16px;}
+    ol.passos li{padding:10px 10px 10px 42px;}
+    .destaque{white-space:normal;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Último passo para ativar o pagamento</h1>
+    <p class="subtitle">Cárnicas Dani · loja online · 4 de setembro de 2026</p>
+    <p class="subtitle-es" lang="es">Cárnicas Dani · tienda online · 4 de septiembre de 2026</p>
+    <p class="intro">O terminal de cartão foi aprovado pelo banco. Falta apenas uma chave secreta que só o comércio pode copiar no portal do banco — são 5 minutos do Martín, e depois nós concluímos tudo.</p>
+    <p class="intro-es" lang="es">El terminal de tarjeta fue aprobado por el banco. Falta solo una clave secreta que solo el comercio puede copiar en el portal — son 5 minutos de Martín, y después nosotros terminamos todo.</p>
+  </header>
+
+  <!-- Card 1: Boa notícia -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">1</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-ok">Boa notícia <span class="tag-es" lang="es">(buena noticia)</span></span></div>
+        <h2>O banco aprovou o terminal</h2>
+        <p class="h2-es" lang="es">El banco aprobó el terminal</p>
+      </div>
+    </div>
+    <p>O CaixaBank / Redsys aprovou a passagem para produção do terminal. A loja também já passou na validação de site que o banco exige. Número do caso: <span class="destaque">06790738</span>.</p>
+    <p class="es" lang="es">CaixaBank / Redsys aprobó el paso a producción del terminal. La tienda también ya pasó la validación de web que pide el banco. Número del caso: <span class="destaque">06790738</span>.</p>
+  </div>
+
+  <!-- Card 2: O que falta -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">2</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-importante">Trava o pagamento <span class="tag-es" lang="es">(bloquea el pago)</span></span></div>
+        <h2>O que falta: a chave secreta SHA-256</h2>
+        <p class="h2-es" lang="es">Lo que falta: la clave secreta SHA-256</p>
+      </div>
+    </div>
+    <p>Para ativar o pagamento, precisamos de uma chave secreta (SHA-256) do terminal 2. Por segurança, o banco <strong>não envia essa chave por e-mail</strong> — ela só pode ser copiada pelo próprio comércio, dentro do portal. É o único passo que depende de vocês.</p>
+    <p class="es" lang="es">Para activar el pago necesitamos la clave secreta (SHA-256) del terminal 2. Por seguridad, el banco <strong>no envía esa clave por email</strong> — solo puede copiarla el propio comercio, dentro del portal. Es el único paso que depende de vosotros.</p>
+  </div>
+
+  <!-- Card 3: Os 5 passos -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">3</div>
+      <div class="card-title-block">
+        <div class="tags"><span class="tag tag-importante">Para o Martín <span class="tag-es" lang="es">(para Martín)</span></span></div>
+        <h2>Os 5 passos para copiar a chave</h2>
+        <p class="h2-es" lang="es">Los 5 pasos para copiar la clave</p>
+      </div>
+    </div>
+    <ol class="passos">
+      <li>
+        Entrar no portal: <span class="destaque">https://canales.redsys.es/lacaixa/</span>
+        <span class="li-es" lang="es">Entrar en el portal: <span class="destaque">https://canales.redsys.es/lacaixa/</span></span>
+      </li>
+      <li>
+        Usuário: <span class="destaque">367104106-002</span>. Clicar em "¿Ha olvidado su contraseña?" — a senha chega no e-mail <span class="destaque">admon.carnicasdani@gmail.com</span>
+        <span class="li-es" lang="es">Usuario: <span class="destaque">367104106-002</span>. Pulsar "¿Ha olvidado su contraseña?" — la contraseña llega al email <span class="destaque">admon.carnicasdani@gmail.com</span></span>
+      </li>
+      <li>
+        Entrar com essa senha. No menu "Administración" (ícone do maletín), clicar "Comercio" e depois "Buscar"
+        <span class="li-es" lang="es">Entrar con esa contraseña. En el menú "Administración" (icono del maletín), pulsar "Comercio" y luego "Buscar"</span>
+      </li>
+      <li>
+        Clicar em "Detalles" do <strong>terminal 2</strong> e depois no botão "Ver clave" — vai pedir a senha outra vez
+        <span class="li-es" lang="es">Pulsar "Detalles" del <strong>terminal 2</strong> y después el botón "Ver clave" — pedirá la contraseña otra vez</span>
+      </li>
+      <li>
+        A chave SHA-256 (a <strong>LONGA</strong>, que aparece embaixo) fica visível só por <strong>10 segundos</strong>. Copiá-la inteira, sem espaços, e enviar ao Elton
+        <span class="li-es" lang="es">La clave SHA-256 (la <strong>LARGA</strong>, la que aparece abajo) se ve solo durante <strong>10 segundos</strong>. Copiarla entera, sin espacios, y enviársela a Elton</span>
+      </li>
+    </ol>
+  </div>
+
+  <!-- Card 4: O que acontece depois -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">4</div>
+      <div class="card-title-block">
+        <h2>Depois de receber a chave, o resto é com a gente</h2>
+        <p class="h2-es" lang="es">Después de recibir la clave, el resto es cosa nuestra</p>
+      </div>
+    </div>
+    <p>Sem custo de tempo para vocês, fazemos: configurar o WordPress com a chave, o terminal 2 e o modo real; testar com um pedido negado e um pedido autorizado; e confirmar que o pagamento funciona de ponta a ponta.</p>
+    <p class="es" lang="es">Sin coste de tiempo para vosotros, hacemos: configurar el WordPress con la clave, el terminal 2 y el modo real; probar con un pedido denegado y otro autorizado; y confirmar que el pago funciona de principio a fin.</p>
+    <div class="alerta">
+      <strong>Atenção</strong>
+      O teste do pedido autorizado precisa de um cartão real do Cesar: em produção não existe cartão de teste aprovado. Combinaremos com ele o melhor momento para essa prova.
+      <span class="alerta-es" lang="es"><strong>Atención</strong>La prueba del pedido autorizado necesita una tarjeta real de Cesar: en producción no existe tarjeta de prueba aprobada. Combinaremos con él el mejor momento para esa prueba.</span>
+    </div>
+  </div>
+
+  <!-- Card 5: Suporte do banco -->
+  <div class="card">
+    <div class="card-head">
+      <div class="num">5</div>
+      <div class="card-title-block">
+        <h2>Se algo der errado no portal</h2>
+        <p class="h2-es" lang="es">Si algo falla en el portal</p>
+      </div>
+    </div>
+    <p>Qualquer problema para entrar ou ver a chave é com o suporte do banco. Tenham em mãos o número do caso <span class="destaque">06790738</span>:</p>
+    <p class="es" lang="es">Cualquier problema para entrar o ver la clave lo resuelve el soporte del banco. Tened a mano el número de caso <span class="destaque">06790738</span>:</p>
+    <div class="suporte">
+      <strong>Suporte CaixaBank / Redsys</strong>
+      E-mail: <code>virtualtpv@comerciaglobalpay.com</code><br>
+      Telefone: <code>91 435 30 28</code> · Caso: <code>06790738</code>
+      <span class="suporte-es" lang="es">Soporte CaixaBank / Redsys — email <code>virtualtpv@comerciaglobalpay.com</code> · teléfono <code>91 435 30 28</code> · caso <code>06790738</code></span>
+    </div>
+  </div>
+
+  <footer>Documento de trabalho · loja carnicasdani.com<span class="footer-es" lang="es">Documento de trabajo · tienda carnicasdani.com</span></footer>
+
+</div>
+</body>
+</html>
